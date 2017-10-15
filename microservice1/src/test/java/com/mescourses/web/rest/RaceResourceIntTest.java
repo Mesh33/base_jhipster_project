@@ -38,6 +38,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = Microservice1App.class)
 public class RaceResourceIntTest {
 
+    private static final String DEFAULT_PLACE = "AAAAAAAAAA";
+    private static final String UPDATED_PLACE = "BBBBBBBBBB";
+
     @Autowired
     private RaceRepository raceRepository;
 
@@ -77,7 +80,8 @@ public class RaceResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Race createEntity(EntityManager em) {
-        Race race = new Race();
+        Race race = new Race()
+            .place(DEFAULT_PLACE);
         return race;
     }
 
@@ -102,6 +106,7 @@ public class RaceResourceIntTest {
         List<Race> raceList = raceRepository.findAll();
         assertThat(raceList).hasSize(databaseSizeBeforeCreate + 1);
         Race testRace = raceList.get(raceList.size() - 1);
+        assertThat(testRace.getPlace()).isEqualTo(DEFAULT_PLACE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -129,6 +134,24 @@ public class RaceResourceIntTest {
 
     @Test
     @Transactional
+    public void checkPlaceIsRequired() throws Exception {
+        int databaseSizeBeforeTest = raceRepository.findAll().size();
+        // set the field null
+        race.setPlace(null);
+
+        // Create the Race, which fails.
+
+        restRaceMockMvc.perform(post("/api/races")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(race)))
+            .andExpect(status().isBadRequest());
+
+        List<Race> raceList = raceRepository.findAll();
+        assertThat(raceList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllRaces() throws Exception {
         // Initialize the database
         raceRepository.saveAndFlush(race);
@@ -137,7 +160,8 @@ public class RaceResourceIntTest {
         restRaceMockMvc.perform(get("/api/races?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
+            .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())));
     }
 
     @Test
@@ -150,7 +174,8 @@ public class RaceResourceIntTest {
         restRaceMockMvc.perform(get("/api/races/{id}", race.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(race.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(race.getId().intValue()))
+            .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()));
     }
 
     @Test
@@ -171,6 +196,8 @@ public class RaceResourceIntTest {
 
         // Update the race
         Race updatedRace = raceRepository.findOne(race.getId());
+        updatedRace
+            .place(UPDATED_PLACE);
 
         restRaceMockMvc.perform(put("/api/races")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -181,6 +208,7 @@ public class RaceResourceIntTest {
         List<Race> raceList = raceRepository.findAll();
         assertThat(raceList).hasSize(databaseSizeBeforeUpdate);
         Race testRace = raceList.get(raceList.size() - 1);
+        assertThat(testRace.getPlace()).isEqualTo(UPDATED_PLACE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -238,7 +266,8 @@ public class RaceResourceIntTest {
         restRaceMockMvc.perform(get("/api/_search/races?query=id:" + race.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
+            .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())));
     }
 
     @Test

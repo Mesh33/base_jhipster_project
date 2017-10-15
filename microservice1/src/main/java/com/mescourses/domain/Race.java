@@ -3,6 +3,7 @@ package com.mescourses.domain;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -20,6 +21,10 @@ public class Race implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Column(name = "place", nullable = false)
+    private String place;
+
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -27,6 +32,19 @@ public class Race implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public Race place(String place) {
+        this.place = place;
+        return this;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 
@@ -54,6 +72,7 @@ public class Race implements Serializable {
     public String toString() {
         return "Race{" +
             "id=" + getId() +
+            ", place='" + getPlace() + "'" +
             "}";
     }
 }

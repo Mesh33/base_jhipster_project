@@ -18,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -57,7 +58,7 @@ public class RaceResource {
      */
     @PostMapping("/races")
     @Timed
-    public ResponseEntity<Race> createRace(@RequestBody Race race) throws URISyntaxException {
+    public ResponseEntity<Race> createRace(@Valid @RequestBody Race race) throws URISyntaxException {
         log.debug("REST request to save Race : {}", race);
         if (race.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new race cannot already have an ID")).body(null);
@@ -80,7 +81,7 @@ public class RaceResource {
      */
     @PutMapping("/races")
     @Timed
-    public ResponseEntity<Race> updateRace(@RequestBody Race race) throws URISyntaxException {
+    public ResponseEntity<Race> updateRace(@Valid @RequestBody Race race) throws URISyntaxException {
         log.debug("REST request to update Race : {}", race);
         if (race.getId() == null) {
             return createRace(race);
