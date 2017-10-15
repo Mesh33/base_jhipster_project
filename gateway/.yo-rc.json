@@ -1,7 +1,8 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.mescourses"
+      "packageName": "com.mescourses",
+      "microservicePath": "/home/mesh/S9/ecom/Git_Base_Project/microservice1"
     },
     "jhipsterVersion": "4.8.2",
     "baseName": "gateway",
