@@ -1,0 +1,13 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [],
+    "changelogDate": "20171015171240",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "race",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pager",
+    "microserviceName": "microservice1",
+    "searchEngine": "elasticsearch"
+}
