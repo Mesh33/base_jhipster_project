@@ -8,6 +8,10 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
         }
     ],
     "changelogDate": "20171015171240",

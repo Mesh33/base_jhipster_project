@@ -22,6 +22,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -40,6 +42,9 @@ public class RaceResourceIntTest {
 
     private static final String DEFAULT_PLACE = "AAAAAAAAAA";
     private static final String UPDATED_PLACE = "BBBBBBBBBB";
+
+    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
 
     @Autowired
     private RaceRepository raceRepository;
@@ -81,7 +86,8 @@ public class RaceResourceIntTest {
      */
     public static Race createEntity(EntityManager em) {
         Race race = new Race()
-            .place(DEFAULT_PLACE);
+            .place(DEFAULT_PLACE)
+            .date(DEFAULT_DATE);
         return race;
     }
 
@@ -107,6 +113,7 @@ public class RaceResourceIntTest {
         assertThat(raceList).hasSize(databaseSizeBeforeCreate + 1);
         Race testRace = raceList.get(raceList.size() - 1);
         assertThat(testRace.getPlace()).isEqualTo(DEFAULT_PLACE);
+        assertThat(testRace.getDate()).isEqualTo(DEFAULT_DATE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -161,7 +168,8 @@ public class RaceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
-            .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())));
+            .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
+            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
 
     @Test
@@ -175,7 +183,8 @@ public class RaceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(race.getId().intValue()))
-            .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()));
+            .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()))
+            .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()));
     }
 
     @Test
@@ -197,7 +206,8 @@ public class RaceResourceIntTest {
         // Update the race
         Race updatedRace = raceRepository.findOne(race.getId());
         updatedRace
-            .place(UPDATED_PLACE);
+            .place(UPDATED_PLACE)
+            .date(UPDATED_DATE);
 
         restRaceMockMvc.perform(put("/api/races")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -209,6 +219,7 @@ public class RaceResourceIntTest {
         assertThat(raceList).hasSize(databaseSizeBeforeUpdate);
         Race testRace = raceList.get(raceList.size() - 1);
         assertThat(testRace.getPlace()).isEqualTo(UPDATED_PLACE);
+        assertThat(testRace.getDate()).isEqualTo(UPDATED_DATE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -267,7 +278,8 @@ public class RaceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
-            .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())));
+            .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
+            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
 
     @Test

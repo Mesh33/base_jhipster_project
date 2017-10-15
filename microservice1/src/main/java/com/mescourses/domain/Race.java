@@ -5,6 +5,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -24,6 +25,9 @@ public class Race implements Serializable {
     @NotNull
     @Column(name = "place", nullable = false)
     private String place;
+
+    @Column(name = "jhi_date")
+    private LocalDate date;
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
@@ -45,6 +49,19 @@ public class Race implements Serializable {
 
     public void setPlace(String place) {
         this.place = place;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public Race date(LocalDate date) {
+        this.date = date;
+        return this;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 
@@ -73,6 +90,7 @@ public class Race implements Serializable {
         return "Race{" +
             "id=" + getId() +
             ", place='" + getPlace() + "'" +
+            ", date='" + getDate() + "'" +
             "}";
     }
 }

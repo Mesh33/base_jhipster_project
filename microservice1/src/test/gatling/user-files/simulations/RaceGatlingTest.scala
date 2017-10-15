@@ -68,7 +68,7 @@ class RaceGatlingTest extends Simulation {
             .exec(http("Create new race")
             .post("/microservice1/api/races")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "place":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "place":"SAMPLE_TEXT", "date":"2020-01-01T00:00:00.000Z"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_race_url"))).exitHereIfFailed
             .pause(10)
