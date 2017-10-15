@@ -1,0 +1,419 @@
+2017-10-15 18:53:03.910  INFO 3983 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-10-15 18:53:06.689 DEBUG 3983 --- [restartedMain] i.g.j.r.config.AsyncConfiguration        : Creating Async Task Executor
+2017-10-15 18:53:07.711 DEBUG 3983 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Registering JVM gauges
+2017-10-15 18:53:07.891 DEBUG 3983 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Initializing Metrics JMX reporting
+2017-10-15 18:53:11.572 DEBUG 3983 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering CORS filter
+2017-10-15 18:53:11.745  WARN 3983 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 18:53:12.803  INFO 3983 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-10-15 18:53:12.814 DEBUG 3983 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Initializing Metrics registries
+2017-10-15 18:53:12.828 DEBUG 3983 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Filter
+2017-10-15 18:53:12.828 DEBUG 3983 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Servlet
+2017-10-15 18:53:12.832  INFO 3983 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-10-15 18:53:20.951  WARN 3983 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 18:53:21.321  INFO 3983 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-10-15 18:53:21.322  INFO 3983 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-10-15 18:53:21.334  INFO 3983 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1508086401334 with initial instances count: 0
+2017-10-15 18:53:21.622  INFO 3983 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 18:53:21.623  INFO 3983 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 18:53:21.623  INFO 3983 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 18:53:21.624  INFO 3983 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 18:53:22.424  WARN 3983 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-10-15 18:53:23.921 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:23.927 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:24.062  INFO 3983 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 22.688 seconds (JVM running for 23.132)
+2017-10-15 18:53:24.062  INFO 3983 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://127.0.1.1:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-10-15 18:53:24.608  WARN 3983 --- [XNIO-2 task-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-15 18:53:28.927 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:28.928 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:33.397  INFO 3983 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 18:53:33.399  INFO 3983 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 18:53:33.399  INFO 3983 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 18:53:33.399  INFO 3983 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 18:53:33.928 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:33.928 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:38.922  WARN 3983 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY - gateway:bc25a5107617eea73d578b0c2eb27bc3
+2017-10-15 18:53:38.922  WARN 3983 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY - gateway:bc25a5107617eea73d578b0c2eb27bc3
+2017-10-15 18:53:38.929 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:38.929 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:43.929 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:43.931 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:53:43.932 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Adding instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' with URL: http://192.168.1.12:8080/
+2017-10-15 18:53:43.958  INFO 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-15 18:53:43.963 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:48.964 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:48.964 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:53:48.964 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:53:48.964 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:53.965 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:53.966 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:53:53.967 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:53:53.968 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:53:58.968 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:53:58.969 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:53:58.970 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:53:58.971 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:03.972 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:03.972 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:03.972 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:03.972 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:08.973 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:08.974 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:08.975 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:08.975 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:13.976 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:13.977 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:13.977 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:13.978 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:18.979 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:18.980 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:18.980 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:18.980 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:23.981 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:23.981 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:23.982 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:23.982 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:28.983 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:28.984 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:28.985 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:28.985 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:33.986 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:33.986 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:33.987 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:33.987 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:38.988 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:38.989 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:38.989 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:38.990 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:43.990 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:43.990 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:43.991 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:43.991 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:48.991 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 18:54:48.993 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:bc25a5107617eea73d578b0c2eb27bc3 - http://192.168.1.12:8080/ 
+2017-10-15 18:54:48.993 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:bc25a5107617eea73d578b0c2eb27bc3' already registered
+2017-10-15 18:54:48.994 DEBUG 3983 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 18:54:53.547  INFO 3983 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-10-15 18:54:53.547  INFO 3983 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-10-15 18:54:53.607  WARN 3983 --- [Thread-19] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:01:01.124  INFO 5366 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-10-15 19:01:02.707 DEBUG 5366 --- [restartedMain] i.g.j.r.config.AsyncConfiguration        : Creating Async Task Executor
+2017-10-15 19:01:03.174 DEBUG 5366 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Registering JVM gauges
+2017-10-15 19:01:03.225 DEBUG 5366 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Initializing Metrics JMX reporting
+2017-10-15 19:01:06.417 DEBUG 5366 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering CORS filter
+2017-10-15 19:01:06.539  WARN 5366 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:01:07.016  INFO 5366 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-10-15 19:01:07.016 DEBUG 5366 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Initializing Metrics registries
+2017-10-15 19:01:07.019 DEBUG 5366 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Filter
+2017-10-15 19:01:07.019 DEBUG 5366 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Servlet
+2017-10-15 19:01:07.022  INFO 5366 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-10-15 19:01:13.004  WARN 5366 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:01:13.278  INFO 5366 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-10-15 19:01:13.278  INFO 5366 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-10-15 19:01:13.288  INFO 5366 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1508086873287 with initial instances count: 0
+2017-10-15 19:01:13.542  INFO 5366 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 19:01:13.542  INFO 5366 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 19:01:13.542  INFO 5366 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 19:01:13.542  INFO 5366 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 19:01:14.067  WARN 5366 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-10-15 19:01:16.451 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:16.458 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:16.522  INFO 5366 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 17.49 seconds (JVM running for 17.928)
+2017-10-15 19:01:16.522  INFO 5366 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://127.0.1.1:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-10-15 19:01:21.459 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:21.460 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:26.461 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:26.462 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:31.463 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:31.464 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:36.464 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:36.465 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:41.224  WARN 5366 --- [XNIO-2 task-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-15 19:01:41.550 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:41.552 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:46.553 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:46.553 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:50.080  INFO 5366 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 19:01:50.080  INFO 5366 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 19:01:50.081  INFO 5366 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 19:01:50.081  INFO 5366 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 19:01:51.554 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:51.554 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:01:55.870  WARN 5366 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY - gateway:9b786206f28bc3b17eb735d3cf431e99
+2017-10-15 19:01:55.870  WARN 5366 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY - gateway:9b786206f28bc3b17eb735d3cf431e99
+2017-10-15 19:01:56.555 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:01:56.556 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:01:56.562 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Adding instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' with URL: http://192.168.1.12:8080/
+2017-10-15 19:01:56.604  INFO 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-15 19:01:56.610 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:01.611 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:01.612 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:02:01.612 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' already registered
+2017-10-15 19:02:01.612 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:06.613 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:06.613 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:02:06.614 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' already registered
+2017-10-15 19:02:06.614 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:11.615 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:11.616 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:02:11.616 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' already registered
+2017-10-15 19:02:11.617 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:16.618 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:16.619 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:02:16.619 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' already registered
+2017-10-15 19:02:16.619 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:21.619 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:21.622 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:02:21.623 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' already registered
+2017-10-15 19:02:21.624 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:26.625 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:26.626 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:9b786206f28bc3b17eb735d3cf431e99 - http://192.168.1.12:8080/ 
+2017-10-15 19:02:26.626 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:9b786206f28bc3b17eb735d3cf431e99' already registered
+2017-10-15 19:02:26.627 DEBUG 5366 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:29.608  INFO 5366 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-10-15 19:02:29.609  INFO 5366 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-10-15 19:02:29.656  WARN 5366 --- [Thread-19] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:02:43.444  INFO 5724 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-10-15 19:02:45.133 DEBUG 5724 --- [restartedMain] i.g.j.r.config.AsyncConfiguration        : Creating Async Task Executor
+2017-10-15 19:02:45.602 DEBUG 5724 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Registering JVM gauges
+2017-10-15 19:02:45.794 DEBUG 5724 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Initializing Metrics JMX reporting
+2017-10-15 19:02:48.005 DEBUG 5724 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering CORS filter
+2017-10-15 19:02:48.151  WARN 5724 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:02:48.701  INFO 5724 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-10-15 19:02:48.701 DEBUG 5724 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Initializing Metrics registries
+2017-10-15 19:02:48.704 DEBUG 5724 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Filter
+2017-10-15 19:02:48.705 DEBUG 5724 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Servlet
+2017-10-15 19:02:48.709  INFO 5724 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-10-15 19:02:54.783  WARN 5724 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:02:55.129  INFO 5724 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-10-15 19:02:55.130  INFO 5724 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-10-15 19:02:55.143  INFO 5724 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1508086975143 with initial instances count: 0
+2017-10-15 19:02:55.422  INFO 5724 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 19:02:55.422  INFO 5724 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 19:02:55.422  INFO 5724 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 19:02:55.422  INFO 5724 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 19:02:56.025  WARN 5724 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-10-15 19:02:57.067 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:02:57.385 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:02:57.447  INFO 5724 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 16.312 seconds (JVM running for 16.855)
+2017-10-15 19:02:57.448  INFO 5724 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://127.0.1.1:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-10-15 19:03:02.393 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:02.394 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:07.394 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:07.395 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:12.395 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:12.396 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:17.396 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:17.398 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:22.398 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:22.400 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:27.402 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:27.403 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:29.221  WARN 5724 --- [XNIO-2 task-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-15 19:03:32.403 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:32.404 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:37.404 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:37.405 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:37.899  INFO 5724 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 19:03:37.900  INFO 5724 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 19:03:37.900  INFO 5724 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 19:03:37.900  INFO 5724 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 19:03:42.409 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:42.410 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:43.479  WARN 5724 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY - gateway:777da9f2f5c26f060e64b0b298740321
+2017-10-15 19:03:43.479  WARN 5724 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY - gateway:777da9f2f5c26f060e64b0b298740321
+2017-10-15 19:03:47.410 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:47.411 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:03:47.412 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Adding instance 'gateway:777da9f2f5c26f060e64b0b298740321' with URL: http://192.168.1.12:8080/
+2017-10-15 19:03:47.438  INFO 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-15 19:03:47.448 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:52.449 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:52.450 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:03:52.451 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:03:52.451 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:03:57.452 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:03:57.453 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:03:57.453 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:03:57.454 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:02.455 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:02.455 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:02.455 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:02.455 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:07.455 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:07.456 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:07.457 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:07.458 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:12.460 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:12.461 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:12.461 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:12.462 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:17.462 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:17.463 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:17.463 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:17.463 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:22.464 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:22.465 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:22.466 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:22.467 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:27.467 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:27.468 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:27.469 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:27.469 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:32.470 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:32.471 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:777da9f2f5c26f060e64b0b298740321 - http://192.168.1.12:8080/ 
+2017-10-15 19:04:32.472 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:777da9f2f5c26f060e64b0b298740321' already registered
+2017-10-15 19:04:32.472 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:37.473 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:04:37.474 DEBUG 5724 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:04:38.815  INFO 5724 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-10-15 19:04:38.816  INFO 5724 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-10-15 19:04:38.868  WARN 5724 --- [Thread-19] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:04:57.493  INFO 6487 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-10-15 19:05:00.692 DEBUG 6487 --- [restartedMain] i.g.j.r.config.AsyncConfiguration        : Creating Async Task Executor
+2017-10-15 19:05:01.507 DEBUG 6487 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Registering JVM gauges
+2017-10-15 19:05:01.611 DEBUG 6487 --- [restartedMain] i.g.j.r.config.MetricsConfiguration      : Initializing Metrics JMX reporting
+2017-10-15 19:05:05.151 DEBUG 6487 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering CORS filter
+2017-10-15 19:05:05.343  WARN 6487 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:05:06.119  INFO 6487 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-10-15 19:05:06.120 DEBUG 6487 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Initializing Metrics registries
+2017-10-15 19:05:06.123 DEBUG 6487 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Filter
+2017-10-15 19:05:06.124 DEBUG 6487 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Registering Metrics Servlet
+2017-10-15 19:05:06.128  INFO 6487 --- [restartedMain] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-10-15 19:05:15.696  WARN 6487 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-15 19:05:16.244  INFO 6487 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-10-15 19:05:16.244  INFO 6487 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-10-15 19:05:16.276  INFO 6487 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1508087116276 with initial instances count: 0
+2017-10-15 19:05:16.847  INFO 6487 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 19:05:16.847  INFO 6487 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 19:05:16.847  INFO 6487 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 19:05:16.847  INFO 6487 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 19:05:17.744  WARN 6487 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-10-15 19:05:19.779 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:19.799 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:19.908  INFO 6487 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 27.023 seconds (JVM running for 28.243)
+2017-10-15 19:05:19.921  INFO 6487 --- [restartedMain] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://127.0.1.1:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-10-15 19:05:21.912  INFO 6487 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-15 19:05:21.913  INFO 6487 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-15 19:05:21.913  INFO 6487 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-15 19:05:21.913  INFO 6487 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-15 19:05:24.801 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:24.801 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:27.331  WARN 6487 --- [XNIO-2 task-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY - gateway:20710b5694e8a8146f6eab78e9d85e05
+2017-10-15 19:05:27.342  WARN 6487 --- [XNIO-2 task-2] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY - gateway:20710b5694e8a8146f6eab78e9d85e05
+2017-10-15 19:05:29.802 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:29.803 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:29.804 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Adding instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' with URL: http://192.168.1.12:8080/
+2017-10-15 19:05:29.813  INFO 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-15 19:05:29.825 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:34.825 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:34.826 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:34.826 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:05:34.826 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:39.827 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:39.828 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:39.828 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:05:39.828 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:44.829 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:44.831 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:44.831 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:05:44.832 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:49.833 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:49.834 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:49.834 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:05:49.834 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:54.835 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:54.836 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:54.836 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:05:54.836 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:05:59.837 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:05:59.839 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:05:59.839 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:05:59.840 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:04.841 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:04.843 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:04.844 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:04.844 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:09.846 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:09.847 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:09.848 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:09.848 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:14.849 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:14.851 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:14.852 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:14.853 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:19.854 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:19.855 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:19.855 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:19.856 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:24.857 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:24.858 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:24.859 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:24.859 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:29.860 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:29.862 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:29.862 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:29.863 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:34.866 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:34.867 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:34.867 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:34.868 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:39.869 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:39.870 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:39.871 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:39.871 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:44.872 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:44.874 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:44.874 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:44.875 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:49.876 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:49.877 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:49.878 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:49.878 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:54.879 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:54.880 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:54.881 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:54.882 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:06:59.882 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:06:59.883 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:06:59.883 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:06:59.884 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:07:04.884 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:07:04.885 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:07:04.886 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:07:04.886 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:07:09.887 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:07:09.888 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Checking instance gateway:20710b5694e8a8146f6eab78e9d85e05 - http://192.168.1.12:8080/ 
+2017-10-15 19:07:09.888 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:20710b5694e8a8146f6eab78e9d85e05' already registered
+2017-10-15 19:07:09.889 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:07:14.889 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:07:14.890 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:07:19.890 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:07:19.892 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:07:24.892 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Enter: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with argument[s] = []
+2017-10-15 19:07:24.893 DEBUG 6487 --- [pool-4-thread-1] i.g.j.r.aop.logging.LoggingAspect        : Exit: io.github.jhipster.registry.service.ZuulUpdaterService.updateZuulRoutes() with result = null
+2017-10-15 19:07:26.108  INFO 6487 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-10-15 19:07:26.108  INFO 6487 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-10-15 19:07:26.135  WARN 6487 --- [Thread-19] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
