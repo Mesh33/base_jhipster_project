@@ -6,9 +6,14 @@ Importer le projet sur eclipse :
 	- maven existing projects
 
 1. Lancer le jhipster-registry : cd jhipster-registry && yarn install && ./mvnw
-2. 	a. Lancer le gateway : cd gateway
+2. 	Lancer le gateway
+
+	a. cd gateway
+	
 	b. npm update -g generator-jhipster
+	
 	c. yo jhipster
+	
 	d. ./mvnw
 
 
