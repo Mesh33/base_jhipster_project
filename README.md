@@ -12,7 +12,7 @@ Importer le projet sur eclipse :
 	
 	b. npm update -g generator-jhipster
 	
-	c. yo jhipster
+	c. yo jhipster ("a" overwrite all)
 	
 	d. ./mvnw
 
