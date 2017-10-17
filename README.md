@@ -1,6 +1,10 @@
 Git_Base_Project
 Installations nécéssaires : yarn
 
+Importer le projet sur eclipse : 
+	- import
+	- maven existing projects
+
 1. Lancer le jhipster-registry : cd jhipster-registry && yarn install && ./mvnw
 2. 	a. Lancer le gateway : cd gateway
 	b. npm update -g generator-jhipster
