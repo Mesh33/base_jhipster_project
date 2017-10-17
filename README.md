@@ -1,4 +1,6 @@
 Git_Base_Project
+Installations nécéssaires : yarn
+
 1. Lancer le jhipster-registry : cd jhipster-registry && yarn install && ./mvnw
 2. 	a. Lancer le gateway : cd gateway
 	b. npm update -g generator-jhipster
