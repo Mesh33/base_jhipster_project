@@ -18,3 +18,12 @@ Importer le projet sur eclipse :
 
 
 To update databases correctly, running yojhipster in gateway may be necessary
+
+
+3. 	Lancer le/les microservices
+	
+	a. cd microservicefolder
+	
+	b. yojhipster
+	
+	c. ./mvnw
