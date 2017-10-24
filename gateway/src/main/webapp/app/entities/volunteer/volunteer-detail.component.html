@@ -1,0 +1,35 @@
+
+<div *ngIf="volunteer">
+    <h2><span>Volunteer</span> {{volunteer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Participant</span></dt>
+        <dd>
+            <span>{{volunteer.participant}}</span>
+        </dd>
+        <dt><span>Specialite</span></dt>
+        <dd>
+            <span>{{volunteer.specialite}}</span>
+        </dd>
+        <dt><span>Race</span></dt>
+        <dd>
+            <div *ngIf="volunteer.race">
+                <a [routerLink]="['/race', volunteer.race?.id]">{{volunteer.race?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'volunteer/'+ volunteer.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

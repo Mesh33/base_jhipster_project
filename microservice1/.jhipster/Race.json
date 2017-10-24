@@ -1,25 +1,51 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "organizer",
+            "otherEntityName": "organizer",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "race"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "participants",
+            "otherEntityName": "participant",
+            "otherEntityRelationshipName": "race"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "volunteers",
+            "otherEntityName": "volunteer",
+            "otherEntityRelationshipName": "race"
+        }
+    ],
     "fields": [
         {
-            "fieldName": "place",
-            "fieldType": "String",
+            "fieldName": "date",
+            "fieldType": "LocalDate",
             "fieldValidateRules": [
                 "required"
             ]
         },
         {
-            "fieldName": "date",
-            "fieldType": "LocalDate"
+            "fieldName": "place",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "changelogDate": "20171015171240",
-    "dto": "no",
-    "service": "no",
     "entityTableName": "race",
-    "jpaMetamodelFiltering": false,
-    "pagination": "pager",
-    "microserviceName": "microservice1",
-    "searchEngine": "elasticsearch"
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "microserviceName": "microservice1"
 }

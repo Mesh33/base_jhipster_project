@@ -40,11 +40,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = Microservice1App.class)
 public class RaceResourceIntTest {
 
+    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
+
     private static final String DEFAULT_PLACE = "AAAAAAAAAA";
     private static final String UPDATED_PLACE = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
+    private static final Integer DEFAULT_PRICE = 1;
+    private static final Integer UPDATED_PRICE = 2;
 
     @Autowired
     private RaceRepository raceRepository;
@@ -86,8 +89,9 @@ public class RaceResourceIntTest {
      */
     public static Race createEntity(EntityManager em) {
         Race race = new Race()
+            .date(DEFAULT_DATE)
             .place(DEFAULT_PLACE)
-            .date(DEFAULT_DATE);
+            .price(DEFAULT_PRICE);
         return race;
     }
 
@@ -112,8 +116,9 @@ public class RaceResourceIntTest {
         List<Race> raceList = raceRepository.findAll();
         assertThat(raceList).hasSize(databaseSizeBeforeCreate + 1);
         Race testRace = raceList.get(raceList.size() - 1);
-        assertThat(testRace.getPlace()).isEqualTo(DEFAULT_PLACE);
         assertThat(testRace.getDate()).isEqualTo(DEFAULT_DATE);
+        assertThat(testRace.getPlace()).isEqualTo(DEFAULT_PLACE);
+        assertThat(testRace.getPrice()).isEqualTo(DEFAULT_PRICE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -141,10 +146,28 @@ public class RaceResourceIntTest {
 
     @Test
     @Transactional
-    public void checkPlaceIsRequired() throws Exception {
+    public void checkDateIsRequired() throws Exception {
         int databaseSizeBeforeTest = raceRepository.findAll().size();
         // set the field null
-        race.setPlace(null);
+        race.setDate(null);
+
+        // Create the Race, which fails.
+
+        restRaceMockMvc.perform(post("/api/races")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(race)))
+            .andExpect(status().isBadRequest());
+
+        List<Race> raceList = raceRepository.findAll();
+        assertThat(raceList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkPriceIsRequired() throws Exception {
+        int databaseSizeBeforeTest = raceRepository.findAll().size();
+        // set the field null
+        race.setPrice(null);
 
         // Create the Race, which fails.
 
@@ -168,8 +191,9 @@ public class RaceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
+            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
-            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
+            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)));
     }
 
     @Test
@@ -183,8 +207,9 @@ public class RaceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(race.getId().intValue()))
+            .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
             .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()))
-            .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()));
+            .andExpect(jsonPath("$.price").value(DEFAULT_PRICE));
     }
 
     @Test
@@ -206,8 +231,9 @@ public class RaceResourceIntTest {
         // Update the race
         Race updatedRace = raceRepository.findOne(race.getId());
         updatedRace
+            .date(UPDATED_DATE)
             .place(UPDATED_PLACE)
-            .date(UPDATED_DATE);
+            .price(UPDATED_PRICE);
 
         restRaceMockMvc.perform(put("/api/races")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -218,8 +244,9 @@ public class RaceResourceIntTest {
         List<Race> raceList = raceRepository.findAll();
         assertThat(raceList).hasSize(databaseSizeBeforeUpdate);
         Race testRace = raceList.get(raceList.size() - 1);
-        assertThat(testRace.getPlace()).isEqualTo(UPDATED_PLACE);
         assertThat(testRace.getDate()).isEqualTo(UPDATED_DATE);
+        assertThat(testRace.getPlace()).isEqualTo(UPDATED_PLACE);
+        assertThat(testRace.getPrice()).isEqualTo(UPDATED_PRICE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -278,8 +305,9 @@ public class RaceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
+            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
-            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
+            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)));
     }
 
     @Test

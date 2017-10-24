@@ -13,7 +13,6 @@ import {
     RaceDeleteDialogComponent,
     raceRoute,
     racePopupRoute,
-    RaceResolvePagingParams,
 } from './';
 
 const ENTITY_STATES = [
@@ -44,7 +43,6 @@ const ENTITY_STATES = [
     providers: [
         RaceService,
         RacePopupService,
-        RaceResolvePagingParams,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
