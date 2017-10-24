@@ -1,0 +1,31 @@
+
+<div *ngIf="participant">
+    <h2><span>Participant</span> {{participant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Participant</span></dt>
+        <dd>
+            <span>{{participant.participant}}</span>
+        </dd>
+        <dt><span>Race</span></dt>
+        <dd>
+            <div *ngIf="participant.race">
+                <a [routerLink]="['/race', participant.race?.id]">{{participant.race?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'participant/'+ participant.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
