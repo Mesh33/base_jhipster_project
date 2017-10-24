@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
+import { RouterModule } from '@angular/router';
+
 import { Account, LoginModalService, Principal } from '../shared';
 
 @Component({
@@ -45,4 +47,5 @@ export class HomeComponent implements OnInit {
     login() {
         this.modalRef = this.loginModalService.open();
     }
+
 }
