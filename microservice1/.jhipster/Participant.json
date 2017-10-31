@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "race",
+            "otherEntityName": "race",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "participant",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171024173129",
+    "entityTableName": "participant",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "microserviceName": "microservice1"
+}

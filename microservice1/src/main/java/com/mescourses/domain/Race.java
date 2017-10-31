@@ -1,11 +1,14 @@
 package com.mescourses.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -23,11 +26,27 @@ public class Race implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "place", nullable = false)
+    @Column(name = "jhi_date", nullable = false)
+    private LocalDate date;
+
+    @Column(name = "place")
     private String place;
 
-    @Column(name = "jhi_date")
-    private LocalDate date;
+    @NotNull
+    @Column(name = "price", nullable = false)
+    private Integer price;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Organizer organizer;
+
+    @OneToMany(mappedBy = "race")
+    @JsonIgnore
+    private Set<Participant> participants = new HashSet<>();
+
+    @OneToMany(mappedBy = "race")
+    @JsonIgnore
+    private Set<Volunteer> volunteers = new HashSet<>();
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
@@ -36,6 +55,19 @@ public class Race implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public Race date(LocalDate date) {
+        this.date = date;
+        return this;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public String getPlace() {
@@ -51,17 +83,80 @@ public class Race implements Serializable {
         this.place = place;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Integer getPrice() {
+        return price;
     }
 
-    public Race date(LocalDate date) {
-        this.date = date;
+    public Race price(Integer price) {
+        this.price = price;
         return this;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Organizer getOrganizer() {
+        return organizer;
+    }
+
+    public Race organizer(Organizer organizer) {
+        this.organizer = organizer;
+        return this;
+    }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
+    }
+
+    public Set<Participant> getParticipants() {
+        return participants;
+    }
+
+    public Race participants(Set<Participant> participants) {
+        this.participants = participants;
+        return this;
+    }
+
+    public Race addParticipants(Participant participant) {
+        this.participants.add(participant);
+        participant.setRace(this);
+        return this;
+    }
+
+    public Race removeParticipants(Participant participant) {
+        this.participants.remove(participant);
+        participant.setRace(null);
+        return this;
+    }
+
+    public void setParticipants(Set<Participant> participants) {
+        this.participants = participants;
+    }
+
+    public Set<Volunteer> getVolunteers() {
+        return volunteers;
+    }
+
+    public Race volunteers(Set<Volunteer> volunteers) {
+        this.volunteers = volunteers;
+        return this;
+    }
+
+    public Race addVolunteers(Volunteer volunteer) {
+        this.volunteers.add(volunteer);
+        volunteer.setRace(this);
+        return this;
+    }
+
+    public Race removeVolunteers(Volunteer volunteer) {
+        this.volunteers.remove(volunteer);
+        volunteer.setRace(null);
+        return this;
+    }
+
+    public void setVolunteers(Set<Volunteer> volunteers) {
+        this.volunteers = volunteers;
     }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 
@@ -89,8 +184,9 @@ public class Race implements Serializable {
     public String toString() {
         return "Race{" +
             "id=" + getId() +
-            ", place='" + getPlace() + "'" +
             ", date='" + getDate() + "'" +
+            ", place='" + getPlace() + "'" +
+            ", price='" + getPrice() + "'" +
             "}";
     }
 }
