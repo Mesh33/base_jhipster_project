@@ -6,15 +6,9 @@ import com.mescourses.domain.Race;
 import com.mescourses.repository.RaceRepository;
 import com.mescourses.repository.search.RaceSearchRepository;
 import com.mescourses.web.rest.util.HeaderUtil;
-import com.mescourses.web.rest.util.PaginationUtil;
-import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -96,17 +90,14 @@ public class RaceResource {
     /**
      * GET  /races : get all the races.
      *
-     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of races in body
      */
     @GetMapping("/races")
     @Timed
-    public ResponseEntity<List<Race>> getAllRaces(@ApiParam Pageable pageable) {
-        log.debug("REST request to get a page of Races");
-        Page<Race> page = raceRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/races");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
+    public List<Race> getAllRaces() {
+        log.debug("REST request to get all Races");
+        return raceRepository.findAll();
+        }
 
     /**
      * GET  /races/:id : get the "id" race.
@@ -142,16 +133,15 @@ public class RaceResource {
      * to the query.
      *
      * @param query the query of the race search
-     * @param pageable the pagination information
      * @return the result of the search
      */
     @GetMapping("/_search/races")
     @Timed
-    public ResponseEntity<List<Race>> searchRaces(@RequestParam String query, @ApiParam Pageable pageable) {
-        log.debug("REST request to search for a page of Races for query {}", query);
-        Page<Race> page = raceSearchRepository.search(queryStringQuery(query), pageable);
-        HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/races");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    public List<Race> searchRaces(@RequestParam String query) {
+        log.debug("REST request to search Races for query {}", query);
+        return StreamSupport
+            .stream(raceSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .collect(Collectors.toList());
     }
 
 }

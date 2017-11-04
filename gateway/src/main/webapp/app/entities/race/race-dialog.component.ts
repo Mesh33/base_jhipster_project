@@ -9,6 +9,8 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { Race } from './race.model';
 import { RacePopupService } from './race-popup.service';
 import { RaceService } from './race.service';
+import { Organizer, OrganizerService } from '../organizer';
+import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-race-dialog',
@@ -18,18 +20,34 @@ export class RaceDialogComponent implements OnInit {
 
     race: Race;
     isSaving: boolean;
+
+    organizers: Organizer[];
     dateDp: any;
 
     constructor(
         public activeModal: NgbActiveModal,
         private alertService: JhiAlertService,
         private raceService: RaceService,
+        private organizerService: OrganizerService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
+        this.organizerService
+            .query({filter: 'race-is-null'})
+            .subscribe((res: ResponseWrapper) => {
+                if (!this.race.organizer || !this.race.organizer.id) {
+                    this.organizers = res.json;
+                } else {
+                    this.organizerService
+                        .find(this.race.organizer.id)
+                        .subscribe((subRes: Organizer) => {
+                            this.organizers = [subRes].concat(res.json);
+                        }, (subRes: ResponseWrapper) => this.onError(subRes.json));
+                }
+            }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -64,6 +82,10 @@ export class RaceDialogComponent implements OnInit {
 
     private onError(error: any) {
         this.alertService.error(error.message, null, null);
+    }
+
+    trackOrganizerById(index: number, item: Organizer) {
+        return item.id;
     }
 }
 
