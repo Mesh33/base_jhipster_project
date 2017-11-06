@@ -9,8 +9,55 @@
         </button>
     </h2>
     <jhi-alert></jhi-alert>
+
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-8">
+            <div class="table-responsive" *ngIf="races">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th><span>ID</span></th>
+                        <th><span>Date</span></th>
+                        <th><span>Lieu</span></th>
+                        <th><span>Prix</span></th>
+                        <th><span>Organizer</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let race of races ;trackBy: trackId">
+                        <td><a [routerLink]="['../race', race.id ]">{{race.id}}</a></td>
+                        <td>{{race.date | date:'mediumDate'}}</td>
+                        <td>{{race.place}}</td>
+                        <td>{{race.price}}</td>
+                        <td>
+                            <div *ngIf="race.organizer">
+                                <a [routerLink]="['../organizer', race.organizer?.id ]" >{{race.organizer?.id}}</a>
+                            </div>
+                        </td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        [routerLink]="['../race', race.id ]"
+                                        class="btn btn-info btn-sm">
+                                    <span class="fa fa-eye"></span>
+                                    <span class="d-none d-md-inline">Détails</span>
+                                </button>
+                                <button type="submit"
+                                        [routerLink]="['/', { outlets: { popup: 'race/'+ race.id + '/edit'} }]"
+                                        replaceUrl="true"
+                                        class="btn btn-primary btn-sm">
+                                    <span class="fa fa-pencil"></span>
+                                    <span class="d-none d-md-inline">Editer</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
             <form name="searchForm" class="form-inline">
                 <div class="input-group w-100 mt-3">
                     <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Rechercher une course">
@@ -22,51 +69,7 @@
                     </button>
                 </div>
             </form>
+            
         </div>
-    </div>
-    <br/>
-    <div class="table-responsive" *ngIf="races">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-            <th><span>ID</span></th>
-            <th><span>Date</span></th>
-            <th><span>Place</span></th>
-            <th><span>Price</span></th>
-            <th><span>Organizer</span></th>
-            <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let race of races ;trackBy: trackId">
-                <td><a [routerLink]="['../race', race.id ]">{{race.id}}</a></td>
-                <td>{{race.date | date:'mediumDate'}}</td>
-                <td>{{race.place}}</td>
-                <td>{{race.price}}</td>
-                <td>
-                    <div *ngIf="race.organizer">
-                        <a [routerLink]="['../organizer', race.organizer?.id ]" >{{race.organizer?.id}}</a>
-                    </div>
-                </td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                [routerLink]="['../race', race.id ]"
-                                class="btn btn-info btn-sm">
-                            <span class="fa fa-eye"></span>
-                            <span class="d-none d-md-inline">View</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'race/'+ race.id + '/edit'} }]"
-                                replaceUrl="true"
-                                class="btn btn-primary btn-sm">
-                            <span class="fa fa-pencil"></span>
-                            <span class="d-none d-md-inline">Edit</span>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
     </div>
 </div>
