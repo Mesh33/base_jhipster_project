@@ -31,6 +31,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.mescourses.domain.enumeration.RaceTypes;
 /**
  * Test class for the RaceResource REST controller.
  *
@@ -48,6 +49,15 @@ public class RaceResourceIntTest {
 
     private static final Integer DEFAULT_PRICE = 1;
     private static final Integer UPDATED_PRICE = 2;
+
+    private static final String DEFAULT_RACE_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_RACE_NAME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DEPARTMENT = "AAAAAAAAAA";
+    private static final String UPDATED_DEPARTMENT = "BBBBBBBBBB";
+
+    private static final RaceTypes DEFAULT_RACE_TYPE = RaceTypes.Course_a_pieds;
+    private static final RaceTypes UPDATED_RACE_TYPE = RaceTypes.Ski;
 
     @Autowired
     private RaceRepository raceRepository;
@@ -91,7 +101,10 @@ public class RaceResourceIntTest {
         Race race = new Race()
             .date(DEFAULT_DATE)
             .place(DEFAULT_PLACE)
-            .price(DEFAULT_PRICE);
+            .price(DEFAULT_PRICE)
+            .raceName(DEFAULT_RACE_NAME)
+            .department(DEFAULT_DEPARTMENT)
+            .raceType(DEFAULT_RACE_TYPE);
         return race;
     }
 
@@ -119,6 +132,9 @@ public class RaceResourceIntTest {
         assertThat(testRace.getDate()).isEqualTo(DEFAULT_DATE);
         assertThat(testRace.getPlace()).isEqualTo(DEFAULT_PLACE);
         assertThat(testRace.getPrice()).isEqualTo(DEFAULT_PRICE);
+        assertThat(testRace.getRaceName()).isEqualTo(DEFAULT_RACE_NAME);
+        assertThat(testRace.getDepartment()).isEqualTo(DEFAULT_DEPARTMENT);
+        assertThat(testRace.getRaceType()).isEqualTo(DEFAULT_RACE_TYPE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -193,7 +209,10 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
-            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)));
+            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)))
+            .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())))
+            .andExpect(jsonPath("$.[*].department").value(hasItem(DEFAULT_DEPARTMENT.toString())))
+            .andExpect(jsonPath("$.[*].raceType").value(hasItem(DEFAULT_RACE_TYPE.toString())));
     }
 
     @Test
@@ -209,7 +228,10 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.id").value(race.getId().intValue()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
             .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()))
-            .andExpect(jsonPath("$.price").value(DEFAULT_PRICE));
+            .andExpect(jsonPath("$.price").value(DEFAULT_PRICE))
+            .andExpect(jsonPath("$.raceName").value(DEFAULT_RACE_NAME.toString()))
+            .andExpect(jsonPath("$.department").value(DEFAULT_DEPARTMENT.toString()))
+            .andExpect(jsonPath("$.raceType").value(DEFAULT_RACE_TYPE.toString()));
     }
 
     @Test
@@ -233,7 +255,10 @@ public class RaceResourceIntTest {
         updatedRace
             .date(UPDATED_DATE)
             .place(UPDATED_PLACE)
-            .price(UPDATED_PRICE);
+            .price(UPDATED_PRICE)
+            .raceName(UPDATED_RACE_NAME)
+            .department(UPDATED_DEPARTMENT)
+            .raceType(UPDATED_RACE_TYPE);
 
         restRaceMockMvc.perform(put("/api/races")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -247,6 +272,9 @@ public class RaceResourceIntTest {
         assertThat(testRace.getDate()).isEqualTo(UPDATED_DATE);
         assertThat(testRace.getPlace()).isEqualTo(UPDATED_PLACE);
         assertThat(testRace.getPrice()).isEqualTo(UPDATED_PRICE);
+        assertThat(testRace.getRaceName()).isEqualTo(UPDATED_RACE_NAME);
+        assertThat(testRace.getDepartment()).isEqualTo(UPDATED_DEPARTMENT);
+        assertThat(testRace.getRaceType()).isEqualTo(UPDATED_RACE_TYPE);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -307,7 +335,10 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(race.getId().intValue())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
-            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)));
+            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)))
+            .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())))
+            .andExpect(jsonPath("$.[*].department").value(hasItem(DEFAULT_DEPARTMENT.toString())))
+            .andExpect(jsonPath("$.[*].raceType").value(hasItem(DEFAULT_RACE_TYPE.toString())));
     }
 
     @Test

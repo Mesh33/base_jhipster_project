@@ -40,12 +40,27 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "raceName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "department",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raceType",
+            "fieldType": "RaceTypes",
+            "fieldValues": "Course_a_pieds, Ski, Velo, Marathon"
         }
     ],
     "changelogDate": "20171015171240",
-    "entityTableName": "race",
     "dto": "no",
-    "pagination": "no",
     "service": "no",
-    "microserviceName": "microservice1"
+    "entityTableName": "race",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "microservice1",
+    "searchEngine": "elasticsearch"
 }

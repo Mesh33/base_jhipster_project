@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import com.mescourses.domain.enumeration.RaceTypes;
+
 /**
  * A Race.
  */
@@ -35,6 +37,16 @@ public class Race implements Serializable {
     @NotNull
     @Column(name = "price", nullable = false)
     private Integer price;
+
+    @Column(name = "race_name")
+    private String raceName;
+
+    @Column(name = "department")
+    private String department;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "race_type")
+    private RaceTypes raceType;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -94,6 +106,45 @@ public class Race implements Serializable {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    public String getRaceName() {
+        return raceName;
+    }
+
+    public Race raceName(String raceName) {
+        this.raceName = raceName;
+        return this;
+    }
+
+    public void setRaceName(String raceName) {
+        this.raceName = raceName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public Race department(String department) {
+        this.department = department;
+        return this;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public RaceTypes getRaceType() {
+        return raceType;
+    }
+
+    public Race raceType(RaceTypes raceType) {
+        this.raceType = raceType;
+        return this;
+    }
+
+    public void setRaceType(RaceTypes raceType) {
+        this.raceType = raceType;
     }
 
     public Organizer getOrganizer() {
@@ -187,6 +238,9 @@ public class Race implements Serializable {
             ", date='" + getDate() + "'" +
             ", place='" + getPlace() + "'" +
             ", price='" + getPrice() + "'" +
+            ", raceName='" + getRaceName() + "'" +
+            ", department='" + getDepartment() + "'" +
+            ", raceType='" + getRaceType() + "'" +
             "}";
     }
 }
