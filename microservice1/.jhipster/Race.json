@@ -44,6 +44,10 @@
         {
             "fieldName": "raceName",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "department",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20171015171240",

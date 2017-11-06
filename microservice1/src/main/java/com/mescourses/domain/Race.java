@@ -39,6 +39,9 @@ public class Race implements Serializable {
     @Column(name = "race_name")
     private String raceName;
 
+    @Column(name = "department")
+    private String department;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Organizer organizer;
@@ -110,6 +113,19 @@ public class Race implements Serializable {
 
     public void setRaceName(String raceName) {
         this.raceName = raceName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public Race department(String department) {
+        this.department = department;
+        return this;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public Organizer getOrganizer() {
@@ -204,6 +220,7 @@ public class Race implements Serializable {
             ", place='" + getPlace() + "'" +
             ", price='" + getPrice() + "'" +
             ", raceName='" + getRaceName() + "'" +
+            ", department='" + getDepartment() + "'" +
             "}";
     }
 }

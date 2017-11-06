@@ -52,6 +52,9 @@ public class RaceResourceIntTest {
     private static final String DEFAULT_RACE_NAME = "AAAAAAAAAA";
     private static final String UPDATED_RACE_NAME = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DEPARTMENT = "AAAAAAAAAA";
+    private static final String UPDATED_DEPARTMENT = "BBBBBBBBBB";
+
     @Autowired
     private RaceRepository raceRepository;
 
@@ -95,7 +98,8 @@ public class RaceResourceIntTest {
             .date(DEFAULT_DATE)
             .place(DEFAULT_PLACE)
             .price(DEFAULT_PRICE)
-            .raceName(DEFAULT_RACE_NAME);
+            .raceName(DEFAULT_RACE_NAME)
+            .department(DEFAULT_DEPARTMENT);
         return race;
     }
 
@@ -124,6 +128,7 @@ public class RaceResourceIntTest {
         assertThat(testRace.getPlace()).isEqualTo(DEFAULT_PLACE);
         assertThat(testRace.getPrice()).isEqualTo(DEFAULT_PRICE);
         assertThat(testRace.getRaceName()).isEqualTo(DEFAULT_RACE_NAME);
+        assertThat(testRace.getDepartment()).isEqualTo(DEFAULT_DEPARTMENT);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -199,7 +204,8 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)))
-            .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())));
+            .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())))
+            .andExpect(jsonPath("$.[*].department").value(hasItem(DEFAULT_DEPARTMENT.toString())));
     }
 
     @Test
@@ -216,7 +222,8 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
             .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()))
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE))
-            .andExpect(jsonPath("$.raceName").value(DEFAULT_RACE_NAME.toString()));
+            .andExpect(jsonPath("$.raceName").value(DEFAULT_RACE_NAME.toString()))
+            .andExpect(jsonPath("$.department").value(DEFAULT_DEPARTMENT.toString()));
     }
 
     @Test
@@ -241,7 +248,8 @@ public class RaceResourceIntTest {
             .date(UPDATED_DATE)
             .place(UPDATED_PLACE)
             .price(UPDATED_PRICE)
-            .raceName(UPDATED_RACE_NAME);
+            .raceName(UPDATED_RACE_NAME)
+            .department(UPDATED_DEPARTMENT);
 
         restRaceMockMvc.perform(put("/api/races")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -256,6 +264,7 @@ public class RaceResourceIntTest {
         assertThat(testRace.getPlace()).isEqualTo(UPDATED_PLACE);
         assertThat(testRace.getPrice()).isEqualTo(UPDATED_PRICE);
         assertThat(testRace.getRaceName()).isEqualTo(UPDATED_RACE_NAME);
+        assertThat(testRace.getDepartment()).isEqualTo(UPDATED_DEPARTMENT);
 
         // Validate the Race in Elasticsearch
         Race raceEs = raceSearchRepository.findOne(testRace.getId());
@@ -317,7 +326,8 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)))
-            .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())));
+            .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())))
+            .andExpect(jsonPath("$.[*].department").value(hasItem(DEFAULT_DEPARTMENT.toString())));
     }
 
     @Test
