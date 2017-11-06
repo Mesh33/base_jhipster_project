@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import com.mescourses.domain.enumeration.RaceTypes;
+
 /**
  * A Race.
  */
@@ -41,6 +43,10 @@ public class Race implements Serializable {
 
     @Column(name = "department")
     private String department;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "race_type")
+    private RaceTypes raceType;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -126,6 +132,19 @@ public class Race implements Serializable {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public RaceTypes getRaceType() {
+        return raceType;
+    }
+
+    public Race raceType(RaceTypes raceType) {
+        this.raceType = raceType;
+        return this;
+    }
+
+    public void setRaceType(RaceTypes raceType) {
+        this.raceType = raceType;
     }
 
     public Organizer getOrganizer() {
@@ -221,6 +240,7 @@ public class Race implements Serializable {
             ", price='" + getPrice() + "'" +
             ", raceName='" + getRaceName() + "'" +
             ", department='" + getDepartment() + "'" +
+            ", raceType='" + getRaceType() + "'" +
             "}";
     }
 }

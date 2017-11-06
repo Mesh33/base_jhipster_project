@@ -48,6 +48,11 @@
         {
             "fieldName": "department",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "raceType",
+            "fieldType": "RaceTypes",
+            "fieldValues": "Course_a_pieds, Ski, Velo, Marathon"
         }
     ],
     "changelogDate": "20171015171240",
