@@ -16,25 +16,23 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th><span>ID</span></th>
-                        <th><span>Date</span></th>
+                        <th><span>Type</span></th>
+                        <th><span>Nom</span></th>
+                        <th><span>Département</span></th>
                         <th><span>Lieu</span></th>
+                        <th><span>Date</span></th>
                         <th><span>Prix</span></th>
-                        <th><span>Organizer</span></th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr *ngFor="let race of races ;trackBy: trackId">
-                        <td><a [routerLink]="['../race', race.id ]">{{race.id}}</a></td>
-                        <td>{{race.date | date:'mediumDate'}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>{{race.place}}</td>
-                        <td>{{race.price}}</td>
-                        <td>
-                            <div *ngIf="race.organizer">
-                                <a [routerLink]="['../organizer', race.organizer?.id ]" >{{race.organizer?.id}}</a>
-                            </div>
-                        </td>
+                        <td>{{race.date | date:"dd/MM/yyyy"}}</td>
+                        <td>{{race.price}} €</td>
                         <td class="text-right">
                             <div class="btn-group flex-btn-group-container">
                                 <button type="submit"
@@ -55,6 +53,9 @@
                     </tr>
                     </tbody>
                 </table>
+                <div *ngIf="races.length ==0" class="text-center">
+                    Il n'y a pas de résultats correpondant à votre recherche... pour le moment
+                </div>
             </div>
         </div>
         <div class="col-md-4">
@@ -71,23 +72,27 @@
             </form>
             <form name="dateForm" class="form-inline">
                 <div class="input-group w-100 mt-3">
-                    <input type="text" class="form-control" [(ngModel)]="currentDate" id="currentDate" name="currentSearch" placeholder="Date">
-                    <button class="input-group-addon btn btn-info">
+                    <input id="currentDate" type="text" class="form-control" name="currentDate" ngbDatepicker  #dateDp="ngbDatepicker"/>
+                    <button class="input-group-addon btn btn-info" (click)="dateDp.toggle()">
                         <span class="fa fa-calendar-o"></span>
                     </button>
-                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
-                        <span class="fa fa-trash-o"></span>
+                    <button class="input-group-addon btn btn-info">
+                        <span class="fa fa-search"></span>
                     </button>
                 </div>
             </form>
+            <br/>
+            <div class="form-group">
+                <select class="form-control" id="dept">
+                    <option>-- Département --</option>
+                    <option *ngFor="let dept of departements" [value]="dept">{{dept}}</option>
+                </select>
+            </div>
             <form name="searchForm" class="form-inline">
                 <div class="input-group w-100 mt-3">
                     <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Lieu">
                     <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
                         <span class="fa fa-map-pin"></span>
-                    </button>
-                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
-                        <span class="fa fa-trash-o"></span>
                     </button>
                 </div>
             </form>

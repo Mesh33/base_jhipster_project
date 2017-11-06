@@ -17,6 +17,7 @@ races: Race[];
     currentAccount: any;
     eventSubscriber: Subscription;
     currentSearch: string;
+    dateDp: any;
 
     constructor(
         private raceService: RaceService,
