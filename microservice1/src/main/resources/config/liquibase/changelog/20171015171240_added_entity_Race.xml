@@ -33,6 +33,10 @@
             <column name="price" type="integer">
                 <constraints nullable="false" />
             </column>
+
+            <column name="race_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="organizer_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
