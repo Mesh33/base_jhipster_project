@@ -104,6 +104,20 @@ public class RaceResource {
     }
 
     /**
+     * GET  /races/:id : get the "id" race.
+     *
+     * @param id the id of the race to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the race, or with status 404 (Not Found)
+     */
+    @GetMapping("/races/{city}")
+    @Timed
+    public ResponseEntity<Race> getRace(@PathVariable String city) {
+        log.debug("REST request to get Race : {}", id);
+        Race race = raceRepository.findOne(id);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(race));
+    }
+    
+    /**
      * DELETE  /races/:id : delete the "id" race.
      *
      * @param id the id of the race to delete

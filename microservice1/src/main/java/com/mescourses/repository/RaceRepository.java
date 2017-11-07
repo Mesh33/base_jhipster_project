@@ -12,5 +12,5 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface RaceRepository extends JpaRepository<Race, Long> {
-
+	
 }
