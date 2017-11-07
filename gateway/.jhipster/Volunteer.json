@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "race",
+            "otherEntityName": "race",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "username",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "specialite",
+            "fieldType": "Specialite",
+            "fieldValues": "MEDECIN,OUVREUR"
+        }
+    ],
+    "changelogDate": "20171107091900",
+    "entityTableName": "volunteer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "microserviceName": "microservice1"
+}
