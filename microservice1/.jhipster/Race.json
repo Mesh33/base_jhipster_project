@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "organizer",
+            "otherEntityName": "organizer",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "race"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "participants",
+            "otherEntityName": "participant",
+            "otherEntityRelationshipName": "race"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "volunteers",
+            "otherEntityName": "volunteer",
+            "otherEntityRelationshipName": "race"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "place",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "department",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raceName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raceType",
+            "fieldType": "RaceType",
+            "fieldValues": "MARATHON,SKI"
+        }
+    ],
+    "changelogDate": "20171107091659",
+    "entityTableName": "race",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "microserviceName": "microservice1"
+}
