@@ -4,8 +4,13 @@
             <i class="fa fa-bars"></i>
         </a>
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
-            <span class="logo-img"></span>
-            <span class="navbar-title">MesCourses</span> <span class="navbar-version">{{version}}</span>
+            <table>
+                <td><span class="logo-img" *ngIf="isNavbarCollapsed"></span></td>
+                <td>
+                    <tr><span class="navbar-title">MesCourses</span></tr>
+                    <tr><span class="navbar-subtitle" *ngIf="isNavbarCollapsed">Relever les challenges sportifs de votre région</span></tr>
+                </td>
+            </table>
         </a>
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
