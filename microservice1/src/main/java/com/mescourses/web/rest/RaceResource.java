@@ -2,7 +2,7 @@ package com.mescourses.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mescourses.domain.Race;
-
+import com.mescourses.domain.enumeration.RaceType;
 import com.mescourses.repository.RaceRepository;
 import com.mescourses.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -88,7 +88,20 @@ public class RaceResource {
         log.debug("REST request to get all Races");
         return raceRepository.findAll();
         }
-
+    
+    /**
+     * GET  /races : get all the races.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of races in body
+     */
+    @GetMapping("/races/{customSearch}")
+    @Timed
+    public List<Race> getRaceForm(RaceType type, LocalDate date, String place) {
+        log.debug("REST request to get all Races");
+        
+        return raceRepository.findRaceCustom(type, date, place);
+        }
+    
     /**
      * GET  /races/:id : get the "id" race.
      *
@@ -109,13 +122,13 @@ public class RaceResource {
      * @param id the id of the race to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the race, or with status 404 (Not Found)
      */
-    @GetMapping("/races/{city}")
-    @Timed
-    public ResponseEntity<Race> getRace(@PathVariable String city) {
-        log.debug("REST request to get Race : {}", id);
-        Race race = raceRepository.findOne(id);
-        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(race));
-    }
+//    @GetMapping("/races/{city}")
+//    @Timed
+//    public ResponseEntity<Race> getRace(@PathVariable String city) {
+//        log.debug("REST request to get Race : {}", id);
+//        Race race = raceRepository.findOne(id);
+//        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(race));
+//    }
     
     /**
      * DELETE  /races/:id : delete the "id" race.
