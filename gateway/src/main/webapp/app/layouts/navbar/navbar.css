@@ -3,14 +3,14 @@ Navbar
 ========================================================================== */
 .navbar-title {
     padding-left: 30px;
-    color : #0dbc15;
+    color : #027007;
     font-family: "Bebas Neue";
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .navbar-subtitle {
     padding-left: 50px;
-    font-size: 16px;
+    font-size: 18px;
     color: #0dbc15;
     font-family: "Bebas Neue";
 }
@@ -80,14 +80,14 @@ Logo styles
 }
 
 .logo .logo-img {
-    height: 80px;
+    height: 100px;
     display: inline-block;
     vertical-align: middle;
     width: 100px;
 }
 
 .logo-img {
-    height: 100%;
+    height: 80px;
     background: url("../../../content/images/logo_mescourses.png") no-repeat center center;
     background-size: contain;
     width: 100%;
