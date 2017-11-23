@@ -20,7 +20,7 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface RaceRepository extends JpaRepository<Race, Long> {
 
-	@Query("SELECT r FROM Race r WHERE r.raceType = :type% AND r.date = :date AND r.place =:place%")
+	@Query("SELECT r FROM Race r WHERE r.raceType LIKE :type% AND r.date = :date AND r.place LIKE :place%")
 	List<Race> findRaceCustom(
 								@Param("type") RaceType type,
 								@Param("date") LocalDate date,

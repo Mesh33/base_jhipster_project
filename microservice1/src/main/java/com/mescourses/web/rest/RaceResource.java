@@ -94,13 +94,13 @@ public class RaceResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of races in body
      */
-    @GetMapping("/races/{customSearch}")
-    @Timed
-    public List<Race> getRaceForm(RaceType type, LocalDate date, String place) {
-        log.debug("REST request to get all Races");
-        
-        return raceRepository.findRaceCustom(type, date, place);
-        }
+//    @GetMapping("/races/{customSearch}")
+//    @Timed
+//    public List<Race> getRaceForm(RaceType type, LocalDate date, String place) {
+//        log.debug("REST request to get all Races");
+//        
+//        return raceRepository.findRaceCustom(type, date, place);
+//        }
     
     /**
      * GET  /races/:id : get the "id" race.
