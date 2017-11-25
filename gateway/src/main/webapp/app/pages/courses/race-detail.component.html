@@ -1,0 +1,39 @@
+
+<div *ngIf="race">
+    <h2><span>Race</span> {{race.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Date</span></dt>
+        <dd>
+            <span>{{race.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Place</span></dt>
+        <dd>
+            <span>{{race.place}}</span>
+        </dd>
+        <dt><span>Price</span></dt>
+        <dd>
+            <span>{{race.price}}</span>
+        </dd>
+        <dt><span>Organizer</span></dt>
+        <dd>
+            <div *ngIf="race.organizer">
+                <a [routerLink]="['/organizer', race.organizer?.id]">{{race.organizer?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'race/'+ race.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

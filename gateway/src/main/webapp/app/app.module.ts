@@ -25,6 +25,8 @@ import {
     ErrorComponent
 } from './layouts';
 
+import {GatewayPagesModule} from './pages/pages.module';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -35,6 +37,7 @@ import {
         GatewayAdminModule,
         GatewayAccountModule,
         GatewayEntityModule,
+        GatewayPagesModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

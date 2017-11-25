@@ -1,0 +1,101 @@
+<div>
+    <h2>
+        <span>Les Courses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-race" [routerLink]="['/', { outlets: { popup: ['race-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down" >
+            Organiser une course
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="table-responsive" *ngIf="races">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th><span>Type</span></th>
+                        <th><span>Nom</span></th>
+                        <th><span>Département</span></th>
+                        <th><span>Lieu</span></th>
+                        <th><span>Date</span></th>
+                        <th><span>Prix</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let race of races ;trackBy: trackId">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{race.place}}</td>
+                        <td>{{race.date | date:"dd/MM/yyyy"}}</td>
+                        <td>{{race.price}} €</td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        [routerLink]="['../race', race.id ]"
+                                        class="btn btn-info btn-sm">
+                                    <span class="fa fa-eye"></span>
+                                    <span class="d-none d-md-inline">Détails</span>
+                                </button>
+                                <button type="submit"
+                                        [routerLink]="['/', { outlets: { popup: 'race/'+ race.id + '/edit'} }]"
+                                        replaceUrl="true"
+                                        class="btn btn-primary btn-sm">
+                                    <span class="fa fa-pencil"></span>
+                                    <span class="d-none d-md-inline">Editer</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="races.length ==0" class="text-center">
+                    Il n'y a pas de résultats correpondant à votre recherche... pour le moment
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Type de course">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+            <form name="dateForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input id="currentDate" type="text" class="form-control" name="currentDate" ngbDatepicker  #dateDp="ngbDatepicker"/>
+                    <button class="input-group-addon btn btn-info" (click)="dateDp.toggle()">
+                        <span class="fa fa-calendar-o"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-info">
+                        <span class="fa fa-search"></span>
+                    </button>
+                </div>
+            </form>
+            <br/>
+            <div class="form-group">
+                <select class="form-control" id="dept">
+                    <option>-- Département --</option>
+                    <option *ngFor="let dept of departements" [value]="dept">{{dept}}</option>
+                </select>
+            </div>
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Lieu">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-map-pin"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
