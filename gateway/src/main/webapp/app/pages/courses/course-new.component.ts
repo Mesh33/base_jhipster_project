@@ -136,9 +136,11 @@ export class CourseNewComponent implements OnInit {
     ngOnInit() {
         this.course = new Course();
         this.isSaving = false;
+        /*
         this.principal.identity().then((account) => {
             this.course.organizer = account;
         });
+        */
         /*
         this.organizerService
             .query({filter: 'race-is-null'})
@@ -169,7 +171,6 @@ export class CourseNewComponent implements OnInit {
             this.subscribeToSaveResponse(
                 this.courseService.create(this.course));
         }
-        this.router.navigateByUrl('/');
     }
 
     private subscribeToSaveResponse(result: Observable<Course>) {
@@ -180,6 +181,7 @@ export class CourseNewComponent implements OnInit {
     private onSaveSuccess(result: Course) {
         this.eventManager.broadcast({ name: 'raceListModification', content: 'OK'});
         this.isSaving = false;
+        this.router.navigateByUrl('race/' + result.id);
     }
 
     private onSaveError() {
