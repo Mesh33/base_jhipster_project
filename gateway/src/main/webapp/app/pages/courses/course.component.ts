@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
-import {Course, DeptType} from './course.model';
+import {Course, CourseDept, CourseType} from './course.model';
 import { CourseService } from './course.service';
 
 import { ITEMS_PER_PAGE, Principal, ResponseWrapper } from '../../shared';
@@ -18,6 +18,11 @@ export class CourseComponent implements OnInit {
     currentAccount: any;
     eventSubscriber: Subscription;
     currentSearch: string;
+    searchType: CourseType;
+    searchDept: CourseDept;
+    searchDate: any;
+    searchPlace: string;
+
     dateDp: any;
     departements = [
         '(01) - Ain',
@@ -146,12 +151,17 @@ export class CourseComponent implements OnInit {
         );
     }
 
-    search(query) {
-        if (!query) {
-            return this.clear();
-        }
-        this.currentSearch = query;
-        this.loadAll();
+    search() {
+        this.courseService.search({
+            type: this.searchType,
+            dept: this.searchDept,
+            date: this.searchDate,
+            place: this.searchPlace
+        }).subscribe(
+            (res: ResponseWrapper) => this.courses = res.json,
+            (res: ResponseWrapper) => this.onError(res.json)
+        );
+        return;
     }
 
     clear() {

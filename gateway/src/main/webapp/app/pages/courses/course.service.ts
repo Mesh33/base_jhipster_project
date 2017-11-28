@@ -5,13 +5,13 @@ import { Observable } from 'rxjs/Rx';
 import { JhiDateUtils } from 'ng-jhipster';
 
 import { Course } from './course.model';
-import { ResponseWrapper, createRequestOption } from '../../shared';
+import { ResponseWrapper, createRequestOption, createCustomRequestOption } from '../../shared';
 
 @Injectable()
 export class CourseService {
 
     private resourceUrl = 'microservice1/api/races';
-    private resourceSearchUrl = 'microservice1/api/races/customSearch';
+    private resourceSearchUrl = 'microservice1/api/races/_search';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 
@@ -52,7 +52,9 @@ export class CourseService {
     }
 
     search(req?: any): Observable<ResponseWrapper> {
-        const options = createRequestOption(req);
+        this.convertQuery(req);
+        const options = createCustomRequestOption(req);
+        console.log(options);
         return this.http.get(this.resourceSearchUrl, options)
             .map((res: any) => this.convertResponse(res));
     }
@@ -75,5 +77,9 @@ export class CourseService {
         copy.date = this.dateUtils
             .convertLocalDateToServer(course.date);
         return copy;
+    }
+
+    private convertQuery(query: any) {
+        query.date = this.dateUtils.convertLocalDateToServer(query.date);
     }
 }

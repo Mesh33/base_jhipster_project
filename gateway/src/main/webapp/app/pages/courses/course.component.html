@@ -39,20 +39,17 @@
             </div>
         </div>
         <div class="col-md-4">
-            <form name="searchForm" class="form-inline">
+            <form name="typeForm" class="form-inline">
                 <div class="input-group w-100 mt-3">
-                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Type de course">
-                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                    <input type="text" class="form-control" [(ngModel)]="searchType" id="searchType" name="searchType" placeholder="Type de course">
+                    <button class="input-group-addon btn btn-info" (click)="search()">
                         <span class="fa fa-search"></span>
-                    </button>
-                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
-                        <span class="fa fa-trash-o"></span>
                     </button>
                 </div>
             </form>
             <form name="dateForm" class="form-inline">
                 <div class="input-group w-100 mt-3">
-                    <input id="currentDate" type="text" class="form-control" name="currentDate" ngbDatepicker  #dateDp="ngbDatepicker"/>
+                    <input id="currentDate" type="text" class="form-control" name="currentDate" ngbDatepicker  #dateDp="ngbDatepicker" [(ngModel)]="searchDate" placeholder="Date"/>
                     <button class="input-group-addon btn btn-info" (click)="dateDp.toggle()">
                         <span class="fa fa-calendar-o"></span>
                     </button>
@@ -63,19 +60,27 @@
             </form>
             <br/>
             <div class="form-group">
-                <select class="form-control" id="dept">
+                <select class="form-control" id="dept" [(ngModel)]="searchDept">
                     <option>-- Département --</option>
                     <option *ngFor="let dept of departements" [value]="dept">{{dept}}</option>
                 </select>
             </div>
-            <form name="searchForm" class="form-inline">
+            <form name="placeForm" class="form-inline">
                 <div class="input-group w-100 mt-3">
-                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Lieu">
+                    <input type="text" class="form-control" [(ngModel)]="searchPlace" id="searchPlace" name="searchPlace" placeholder="Lieu">
                     <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
                         <span class="fa fa-map-pin"></span>
                     </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
                 </div>
             </form>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="search()">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
         </div>
     </div>
 </div>

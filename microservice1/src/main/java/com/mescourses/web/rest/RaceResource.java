@@ -130,6 +130,23 @@ public class RaceResource {
 //        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(race));
 //    }
     
+    
+    /**
+     * GET /races/_search searches for races answering specific parameters
+     * 
+     * @return the list of races searched for
+     */
+    @GetMapping("/races/_search")
+    @Timed
+    public List<Race> searchForRaces(
+    	@RequestParam("type") RaceType type,
+    	@RequestParam("dept") String dept,
+    	@RequestParam("place") String place,
+    	@RequestParam("date") LocalDate date) {
+    	return raceRepository.findByRaceTypeAndDepartmentAndDateAndPlace(type, dept, date, place);
+    }
+    
+    
     /**
      * DELETE  /races/:id : delete the "id" race.
      *
