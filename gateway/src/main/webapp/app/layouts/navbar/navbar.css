@@ -1,13 +1,22 @@
 /* ==========================================================================
 Navbar
 ========================================================================== */
-.navbar-version {
-    font-size: 10px;
-    color: #ccc
+.navbar-title {
+    padding-left: 30px;
+    color : #027007;
+    font-family: "Bebas Neue";
+    font-size: 24px;
+}
+
+.navbar-subtitle {
+    padding-left: 50px;
+    font-size: 18px;
+    color: #0dbc15;
+    font-family: "Bebas Neue";
 }
 
 .jh-navbar {
-    background-color: #353d47;
+    background-color: #ffffff;
     padding: .2em 1em;
 }
 
@@ -36,6 +45,7 @@ Navbar
 
 .jh-navbar a.nav-link {
     font-weight: 400;
+    color : #444444;
 }
 
 .jh-navbar .jh-navbar-toggler {
@@ -60,10 +70,7 @@ Navbar
     }
 }
 
-.navbar-title {
-    display: inline-block;
-    vertical-align: middle;
-}
+
 
 /* ==========================================================================
 Logo styles
@@ -73,15 +80,15 @@ Logo styles
 }
 
 .logo .logo-img {
-    height: 45px;
+    height: 100px;
     display: inline-block;
     vertical-align: middle;
-    width: 70px;
+    width: 100px;
 }
 
 .logo-img {
-    height: 100%;
-    background: url("../../../content/images/logo-jhipster.png") no-repeat center center;
+    height: 80px;
+    background: url("../../../content/images/logo_mescourses.png") no-repeat center center;
     background-size: contain;
     width: 100%;
 }

@@ -191,4 +191,9 @@ ui bootstrap tweaks
     outline: none;
 }
 
+@font-face {
+    font-family: 'Bebas Neue'; /*a name to be used later*/
+    src: url('./bebasneue-webfont.woff'); /*URL to font*/
+}
+
 /* jhipster-needle-css-add-main JHipster will add new css style */
