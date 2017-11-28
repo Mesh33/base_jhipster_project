@@ -5,6 +5,7 @@ import { GatewaySharedModule } from '../../shared';
 import {
     CourseService,
     CourseComponent,
+    CourseNewComponent,
     courseRoute
 } from './';
 
@@ -19,9 +20,11 @@ const ENTITY_STATES = [
     ],
     declarations: [
         CourseComponent,
+        CourseNewComponent,
     ],
     entryComponents: [
         CourseComponent,
+        CourseNewComponent,
     ],
     providers: [
         CourseService
