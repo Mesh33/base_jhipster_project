@@ -139,10 +139,12 @@ public class RaceResource {
     @GetMapping("/races/_search")
     @Timed
     public List<Race> searchForRaces(
-    	@RequestParam("type") RaceType type,
-    	@RequestParam("dept") String dept,
-    	@RequestParam("place") String place,
-    	@RequestParam("date") LocalDate date) {
+    	@RequestParam(value = "type", required = false) RaceType type,
+    	@RequestParam(value = "dept", required = false) String dept,
+    	@RequestParam(value = "place", required = false) String place,
+    	@RequestParam(value = "date", required = false) LocalDate date) {
+    	
+    	//return raceRepository.findRaceCustom(type, dept, date, place);
     	return raceRepository.findByRaceTypeAndDepartmentAndDateAndPlace(type, dept, date, place);
     }
     
