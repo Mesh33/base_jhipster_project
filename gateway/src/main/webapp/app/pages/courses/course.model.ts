@@ -104,7 +104,7 @@ export const enum DeptType {
     '(95) - Val-d\'oise'
 }
 
-export class Race implements BaseEntity {
+export class Course implements BaseEntity {
     constructor(
         public id?: number,
         public date?: any,
