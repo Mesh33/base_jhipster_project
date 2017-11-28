@@ -19,7 +19,7 @@ export class CourseComponent implements OnInit {
     eventSubscriber: Subscription;
     currentSearch: string;
     dateDp: any;
-    public departements = [
+    departements = [
         '(01) - Ain',
         '(02) - Aisne',
         '(03) - Allier',

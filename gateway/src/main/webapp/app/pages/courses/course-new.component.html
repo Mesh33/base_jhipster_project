@@ -37,8 +37,10 @@
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_department">Département de la course</label>
-            <input type="text" class="form-control" name="department" id="field_department"
-                   [(ngModel)]="course.department"  />
+            <select class="form-control" name="department" [(ngModel)]="course.department" id="field_department" >
+                <option>-- Département --</option>
+                <option *ngFor="let dept of departements" [value]="dept">{{dept}}</option>
+            </select>
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_place">Lieu de la course</label>
