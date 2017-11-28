@@ -8,7 +8,19 @@
                    [(ngModel)]="course.id" readonly />
         </div>
         <div class="form-group">
-            <label class="form-control-label" for="field_date">Date</label>
+            <label class="form-control-label" for="field_raceType">Type de course</label>
+            <select class="form-control" name="raceType" [(ngModel)]="course.raceType" id="field_raceType" >
+                <option value="MARATHON">MARATHON</option>
+                <option value="SKI">SKI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_raceName">Nom de la course</label>
+            <input type="text" class="form-control" name="raceName" id="field_raceName"
+                   [(ngModel)]="course.raceName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_date">Date de la course</label>
             <div class="input-group">
                 <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker  #dateDp="ngbDatepicker" [(ngModel)]="course.date"
                        required/>
@@ -24,12 +36,17 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="form-control-label" for="field_place">Place</label>
+            <label class="form-control-label" for="field_department">Département de la course</label>
+            <input type="text" class="form-control" name="department" id="field_department"
+                   [(ngModel)]="course.department"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_place">Lieu de la course</label>
             <input type="text" class="form-control" name="place" id="field_place"
                    [(ngModel)]="course.place"  />
         </div>
         <div class="form-group">
-            <label class="form-control-label" for="field_price">Price</label>
+            <label class="form-control-label" for="field_price">Prix</label>
             <input type="number" class="form-control" name="price" id="field_price"
                    [(ngModel)]="course.price" required />
             <div [hidden]="!(editForm.controls.price?.dirty && editForm.controls.price?.invalid)">
@@ -43,24 +60,6 @@
                 </small>
             </div>
         </div>
-        <div class="form-group">
-            <label class="form-control-label" for="field_department">Department</label>
-            <input type="text" class="form-control" name="department" id="field_department"
-                   [(ngModel)]="course.department"  />
-        </div>
-        <div class="form-group">
-            <label class="form-control-label" for="field_raceName">Race Name</label>
-            <input type="text" class="form-control" name="raceName" id="field_raceName"
-                   [(ngModel)]="course.raceName"  />
-        </div>
-        <div class="form-group">
-            <label class="form-control-label" for="field_raceType">Race Type</label>
-            <select class="form-control" name="raceType" [(ngModel)]="course.raceType" id="field_raceType" >
-                <option value="MARATHON">MARATHON</option>
-                <option value="SKI">SKI</option>
-            </select>
-        </div>
-
         <div class="form-group">
             <label class="form-control-label" for="field_organizer">Organizer</label>
             <select class="form-control" id="field_organizer" name="organizer" [(ngModel)]="course.organizer">

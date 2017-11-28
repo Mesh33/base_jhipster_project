@@ -11,7 +11,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 export class CourseService {
 
     private resourceUrl = 'microservice1/api/races';
-    private resourceSearchUrl = 'microservice1/api/_search/races';
+    private resourceSearchUrl = 'microservice1/api/races/customSearch';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 

@@ -11,6 +11,7 @@ import { Course} from './course.model';
 import { CourseService } from './course.service';
 import { Organizer, OrganizerService } from '../../entities/organizer';
 import { ResponseWrapper } from '../../shared';
+import {Principal} from '../../shared/auth/principal.service';
 
 @Component ({
     selector: 'jhi-course-new',
@@ -30,12 +31,17 @@ export class CourseNewComponent implements OnInit {
         private organizerService: OrganizerService,
         private eventManager: JhiEventManager,
         private router: Router,
+        private principal: Principal
     ) {
     }
 
     ngOnInit() {
         this.course = new Course();
         this.isSaving = false;
+        this.principal.identity().then((account) => {
+            this.course.organizer = account;
+        });
+        /*
         this.organizerService
             .query({filter: 'race-is-null'})
             .subscribe((res: ResponseWrapper) => {
@@ -49,6 +55,7 @@ export class CourseNewComponent implements OnInit {
                         }, (subRes: ResponseWrapper) => this.onError(subRes.json));
                 }
             }, (res: ResponseWrapper) => this.onError(res.json));
+        */
     }
 
     clear() {
