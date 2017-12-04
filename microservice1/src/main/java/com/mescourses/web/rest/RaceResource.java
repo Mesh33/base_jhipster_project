@@ -143,9 +143,83 @@ public class RaceResource {
     	@RequestParam(value = "dept", required = false) String dept,
     	@RequestParam(value = "place", required = false) String place,
     	@RequestParam(value = "date", required = false) LocalDate date) {
+    
+    	/*
+    	if(type == null) {
+    		if(dept == null) {
+    			if(place == null) {
+    				if(date == null) {
+    					return raceRepository.findAll();
+    				} else {
+    					return raceRepository.findByDate(date);
+    				}
+    			} else {
+    				if(date == null) {
+    					return raceRepository.findByPlace(place);
+    				} else {
+    					
+    				}
+    			}
+    		} else {
+    			if(place == null) {
+    				if(date == null) {
+    					return raceRepository.findByDepartment(dept);
+    				} else {
+    					
+    				}
+    			} else {
+    				if(date == null) {
+    					
+    				} else {
+    					
+    				}
+    			}
+    		}
+    	} else {
+    		if(dept == null) {
+				if(place == null) {
+					if(date == null) {
+						return raceRepository.findByRaceType(type);
+					} else {
+						
+					}
+				} else {
+					if(date == null) {
+						
+					} else {
+						
+					}
+				}
+			} else {
+				if(place == null) {
+					if(date == null) {
+						return raceRepository.findByRaceTypeAndDepartment(type, dept);
+					} else {
+			    		return raceRepository.findByRaceTypeAndDepartmentAndDate(type, dept, date);
+					}
+				} else {
+					if(date == null) {
+						return raceRepository.findByRaceTypeAndDepartmentAndPlace(type, dept, place);
+					} else {
+						return raceRepository.findByRaceTypeAndDepartmentAndDateAndPlace(type, dept, date, place);
+					}
+				}
+			}
+    	}
     	
-    	//return raceRepository.findRaceCustom(type, dept, date, place);
-    	return raceRepository.findByRaceTypeAndDepartmentAndDateAndPlace(type, dept, date, place);
+    	*/
+    	
+    	String tp,dt;
+    	
+    	if(place == null) place = "";
+    	if(dept == null) dept = "";
+    	if(type != null) {
+    		tp = type.toString();
+    	}
+    	if(date != null) {
+    		dt = date.toString();
+    	}
+    	return raceRepository.findRaceCustom(type, dept, date, place);
     }
     
     
