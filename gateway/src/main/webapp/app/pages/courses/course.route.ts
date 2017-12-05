@@ -3,6 +3,7 @@ import { UserRouteAccessService } from '../../shared';
 
 import { CourseComponent } from './course.component';
 import { CourseNewComponent } from './course-new.component';
+import { CourseDetailComponent} from './course-detail.component';
 
 export const courseRoute: Routes = [
     {
@@ -20,6 +21,14 @@ export const courseRoute: Routes = [
         data: {
             authorities: ['ROLE_USER'],
             pageTitle: 'Organiser une course'
+        },
+        canActivate: [UserRouteAccessService]
+    }, {
+        path: 'course/:id',
+        component: CourseDetailComponent,
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'Courses'
         },
         canActivate: [UserRouteAccessService]
     }
