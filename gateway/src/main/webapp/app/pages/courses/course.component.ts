@@ -10,7 +10,8 @@ import { JhiAlertService } from 'ng-jhipster';
 
 @Component({
     selector : 'jhi-page-course',
-    templateUrl : './course.component.html'
+    templateUrl : './course.component.html',
+    styles: ['dt { font-weight: normal; }']
 })
 
 export class CourseComponent implements OnInit {
