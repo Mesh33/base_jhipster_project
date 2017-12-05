@@ -18,72 +18,43 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface RaceRepository extends JpaRepository<Race, Long> {
 	
-	List<Race> findByRaceTypeAndDepartmentAndDateAndPlace(
-			RaceType type,
-			String dept,
-			LocalDate date,
-			String place
-	);
-	
-	List<Race> findByRaceTypeAndDepartmentAndDate (
-			RaceType type,
-			String dept,
-			LocalDate date
-			);
-	
-	List<Race> findByRaceTypeAndDepartmentAndPlace(
-			RaceType type,
-			String dept,
-			String place
-	);
-	
-	List<Race> findByRaceTypeAndDepartment(
-			RaceType type,
-			String dept
-	);
-	
-	List<Race> findByDate(LocalDate date);
-	List<Race> findByRaceType(RaceType type);
-	List<Race> findByDepartment(String dept);
-	List<Race> findByPlace(String place);
-	
-	/*
-	@Query("SELECT r FROM Race r WHERE r.raceType LIKE %:type AND r.date LIKE %:date AND r.place LIKE %:place AND r.department LIKE %:dept")
-	List<Race> findRaceCustom(
-								@Param("type") RaceType type,
-								@Param("dept") String dept,
-								@Param("date") LocalDate date,
-								@Param("place") String place
-								);
-	*/
-	
 	@Query("SELECT r FROM Race r "
-			+ "WHERE (r.raceType = :type OR ISNULL(:type,0) = 0) "
-			+ "AND (r.date = :date OR ISNULL(:date, 0) = 0 ) "
+			+ "WHERE r.raceType = :type "
+			+ "AND r.date = :date "
 			+ "AND r.place LIKE %:place% "
 			+ "AND r.department LIKE %:dept%")
-	List<Race> findRaceCustom(
+	List<Race> findRaceCustomAll(
 			@Param("type") RaceType type,
 			@Param("dept") String dept,
 			@Param("date") LocalDate date,
 			@Param("place") String place
 			);
 	
-	//Exist avec subquery?
+	@Query("SELECT r FROM Race r "
+			+ "WHERE r.date = :date "
+			+ "AND r.place LIKE %:place% "
+			+ "AND r.department LIKE %:dept%")
+	List<Race> findRaceCustomNoType(
+			@Param("dept") String dept,
+			@Param("date") LocalDate date,
+			@Param("place") String place
+			);
 	
-//	@Query("FROM Race ")
-//	List<Race> customFindRace(	@Param("") String lastname,
-//								@Param("") String firstname);
-
-	//	@Query("SELECT r FROM Race r WHERE r.place LIKE :place%")
-
+	@Query("SELECT r FROM Race r "
+			+ "WHERE r.raceType = :type "
+			+ "AND r.place LIKE %:place% "
+			+ "AND r.department LIKE %:dept%")
+	List<Race> findRaceCustomNoDate(
+			@Param("type") RaceType type,
+			@Param("dept") String dept,
+			@Param("place") String place
+			);
 	
-	
-// @Query("SELECT organizer FROM Race")	
-//  @QueryHints(value = { @QueryHint(name = "name", value = "value")}, forCounting = false)	
-	
-	
-//	Race findOne(String city);
-
-//	Race findAllByPlace(String city);	
+	@Query("SELECT r FROM Race r "
+			+ "WHERE r.place LIKE %:place% "
+			+ "AND r.department LIKE %:dept%")
+	List<Race> findRaceCustomSimple(
+			@Param("dept") String dept,
+			@Param("place") String place
+			);
 }
