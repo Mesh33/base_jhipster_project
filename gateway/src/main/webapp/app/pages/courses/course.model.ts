@@ -1,11 +1,11 @@
 import { BaseEntity } from './../../shared';
 
-export const enum RaceType {
+export const enum CourseType {
     'MARATHON',
     'SKI'
 }
 
-export const enum DeptType {
+export const enum CourseDept {
     '(01) - Ain',
     '(02) - Aisne',
     '(03) - Allier',
@@ -104,15 +104,15 @@ export const enum DeptType {
     '(95) - Val-d\'oise'
 }
 
-export class Race implements BaseEntity {
+export class Course implements BaseEntity {
     constructor(
         public id?: number,
         public date?: any,
         public place?: string,
         public price?: number,
-        public department?: DeptType,
+        public department?: CourseDept,
         public raceName?: string,
-        public raceType?: RaceType,
+        public raceType?: CourseType,
         public organizer?: BaseEntity,
         public participants?: BaseEntity[],
         public volunteers?: BaseEntity[],

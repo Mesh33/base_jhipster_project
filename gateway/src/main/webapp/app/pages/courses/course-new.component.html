@@ -1,0 +1,81 @@
+<h1>Organiser une course</h1>
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!course.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="course.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_raceType">Type de course</label>
+            <select class="form-control" name="raceType" [(ngModel)]="course.raceType" id="field_raceType" >
+                <option value="MARATHON">MARATHON</option>
+                <option value="SKI">SKI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_raceName">Nom de la course</label>
+            <input type="text" class="form-control" name="raceName" id="field_raceName"
+                   [(ngModel)]="course.raceName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_date">Date de la course</label>
+            <div class="input-group">
+                <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker  #dateDp="ngbDatepicker" [(ngModel)]="course.date"
+                       required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.date?.dirty && editForm.controls.date?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.date?.errors?.required">
+                    This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_department">Département de la course</label>
+            <select class="form-control" name="department" [(ngModel)]="course.department" id="field_department" >
+                <option>-- Département --</option>
+                <option *ngFor="let dept of departements" [value]="dept">{{dept}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_place">Lieu de la course</label>
+            <input type="text" class="form-control" name="place" id="field_place"
+                   [(ngModel)]="course.place"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_price">Prix</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                   [(ngModel)]="course.price" required />
+            <div [hidden]="!(editForm.controls.price?.dirty && editForm.controls.price?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.price?.errors?.required">
+                    This field is required.
+                </small>
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.price?.errors?.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_organizer">Organizer</label>
+            <select class="form-control" id="field_organizer" name="organizer" [(ngModel)]="course.organizer">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="organizerOption.id === course.organizer?.id ? course.organizer : organizerOption" *ngFor="let organizerOption of organizers; trackBy: trackOrganizerById">{{organizerOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
