@@ -49,10 +49,9 @@
                 </dd>
 
                 <dt><span>Organisateur</span></dt>
-                <dd>
-                    <div *ngIf="course.organizer">
-                        <a [routerLink]="['/organizer', course.organizer?.id]">{{course.organizer?.id}}</a>
-                    </div>
+                <dd *ngIf="course.organisateur">
+                    <span class="fa fa-user-o"></span>
+                    <span>{{course.organisateur}}</span>
                 </dd>
             </div>
         </div>

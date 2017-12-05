@@ -136,6 +136,9 @@ export class CourseNewComponent implements OnInit {
     ngOnInit() {
         this.course = new Course();
         this.isSaving = false;
+        this.principal.identity().then((account) => {
+            this.course.organisateur = account.login;
+        });
         /*
         this.principal.identity().then((account) => {
             this.course.organizer = account;

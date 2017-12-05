@@ -33,6 +33,7 @@ export class CourseDetailComponent implements OnInit, OnDestroy {
     load(id) {
         this.raceService.find(id).subscribe((course) => {
             this.course = course;
+            console.log(this.course);
         });
     }
     previousState() {

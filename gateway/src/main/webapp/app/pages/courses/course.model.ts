@@ -116,6 +116,7 @@ export class Course implements BaseEntity {
         public organizer?: BaseEntity,
         public participants?: BaseEntity[],
         public volunteers?: BaseEntity[],
+        public organisateur?: string,
     ) {
     }
 }
