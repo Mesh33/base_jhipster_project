@@ -1,59 +1,70 @@
 
 <div *ngIf="course">
-    <div *ngIf="course.raceName">
-        <h2>{{course.raceName}}</h2>
-    </div>
-    <div *ngIf="!course.raceName">
-        <h2><span>Course n°</span>{{course.id}}</h2>
-    </div>
+    <h2>
+        <span *ngIf="course.raceName">
+            {{course.raceName}}
+        </span>
+        <span *ngIf="!course.raceName">
+            <span>Course n°</span>{{course.id}}
+        </span>
+        <button type="submit"
+                (click)="previousState()"
+                class="btn btn-info float-right">
+            <span class="fa fa-arrow-left"></span>&nbsp;<span> Retour</span>
+        </button>
+    </h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
-    <dl class="row-md jh-entity-details">
-        <dt><span>Date</span></dt>
-        <dd>
-            <span>{{course.date | date:'mediumDate'}}</span>
-        </dd>
-        <dt><span>Lieu</span></dt>
-        <dd>
-            <span>{{course.place}}</span>
-        </dd>
-        <dt><span>Prix</span></dt>
-        <dd>
-            <span>{{course.price}} €</span>
-        </dd>
-        <dt><span>Departement</span></dt>
-        <dd>
-            <span>{{course.department}}</span>
-        </dd>
-        <dt><span>Type de course</span></dt>
-        <dd>
-            <span>{{course.raceType}}</span>
-        </dd>
-        <dt><span>Organisateur</span></dt>
-        <dd>
-            <div *ngIf="course.organizer">
-                <a [routerLink]="['/organizer', course.organizer?.id]">{{course.organizer?.id}}</a>
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <dt>
+                    <span class="fa fa-compass"></span>
+                    <span> Type de course</span>
+                </dt>
+                <dd>
+                    <span>{{course.raceType}}</span>
+                </dd>
+                <dt>
+                    <span class="fa fa-map-marker"></span>
+                    <span> Lieu</span>
+                </dt>
+                <dd>
+                    <span>{{course.place}}</span>
+                    <span>{{course.department}}</span>
+                </dd>
+                <dt>
+                    <span class="fa fa-calendar-o"></span>
+                    <span> Date</span>
+                </dt>
+                <dd>
+                    <span>{{course.date | date:"dd/MM/yyyy"}}</span>
+                </dd>
+                <dt>
+                    <span class="fa fa-eur"></span>
+                    <span> Prix</span>
+                </dt>
+                <dd>
+                    <span>{{course.price}} €</span>
+                </dd>
+
+                <dt><span>Organisateur</span></dt>
+                <dd>
+                    <div *ngIf="course.organizer">
+                        <a [routerLink]="['/organizer', course.organizer?.id]">{{course.organizer?.id}}</a>
+                    </div>
+                </dd>
             </div>
-        </dd>
-    </dl>
-
-    <button type="submit"
-            (click)="previousState()"
-            class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Retour</span>
+        </div>
+        <div class="col align-self-center">
+            <img src="https://camo.githubusercontent.com/6f53eeb8108ef87ccdb03ef0a8f51e9368be6e3a/68747470733a2f2f676f6f676c656d6170732e6769746875622e696f2f6a732d6d61702d6c6162656c2f73637265656e73686f742e706e67">
+        </div>
+    </div>
+    <br/>
+    <button class="btn btn-success btn-block float-bottom"
+            [routerLink]="['../inscription', course.id]"
+            replaceUrl="true">
+        <span class="fa fa-plus"></span>
+        <span>S'inscrire</span>
     </button>
-
-    <button type="button"
-            [routerLink]="['/']"
-            replaceUrl="true"
-            class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Editer</span>
-    </button>
-
-    <button type="button"
-                     [routerLink]="['../inscription', course.id]"
-                     replaceUrl="true"
-                     class="btn btn-primary">
-    <span class="fa fa-pencil"></span>&nbsp;<span> S'inscrire</span>
-</button>
 </div>

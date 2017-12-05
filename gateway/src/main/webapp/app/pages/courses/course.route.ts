@@ -28,7 +28,7 @@ export const courseRoute: Routes = [
         component: CourseDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Courses'
+            pageTitle: 'Races'
         },
         canActivate: [UserRouteAccessService]
     }
