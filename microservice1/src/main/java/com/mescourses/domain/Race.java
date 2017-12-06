@@ -48,6 +48,9 @@ public class Race implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "race_type")
     private RaceType raceType;
+    
+    @Column(name="organisateur", nullable = false)
+    private String organisateur;
 
     @OneToOne
     @JoinColumn(unique = true)
