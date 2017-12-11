@@ -10,7 +10,8 @@ import { JhiAlertService } from 'ng-jhipster';
 
 @Component({
     selector : 'jhi-page-course',
-    templateUrl : './course.component.html'
+    templateUrl : './course.component.html',
+    styles: ['dt { font-weight: normal; }']
 })
 
 export class CourseComponent implements OnInit {
@@ -137,7 +138,10 @@ export class CourseComponent implements OnInit {
             this.courseService.search({
                 query: this.currentSearch,
             }).subscribe(
-                (res: ResponseWrapper) => this.courses = res.json,
+                (res: ResponseWrapper) => {
+                    this.courses = res.json;
+                    this.order();
+                },
                 (res: ResponseWrapper) => this.onError(res.json)
             );
             return;
@@ -145,6 +149,7 @@ export class CourseComponent implements OnInit {
         this.courseService.query().subscribe(
             (res: ResponseWrapper) => {
                 this.courses = res.json;
+                this.order();
                 this.currentSearch = '';
             },
             (res: ResponseWrapper) => this.onError(res.json)
@@ -158,7 +163,10 @@ export class CourseComponent implements OnInit {
             date: this.searchDate,
             place: this.searchPlace
         }).subscribe(
-            (res: ResponseWrapper) => this.courses = res.json,
+            (res: ResponseWrapper) => {
+                this.courses = res.json;
+                this.order();
+            },
             (res: ResponseWrapper) => this.onError(res.json)
         );
         return;
@@ -181,6 +189,18 @@ export class CourseComponent implements OnInit {
 
     private onError(error) {
         this.alertService.error(error.message, null, null);
+    }
+
+    private order() {
+        this.courses.sort(function(a: Course, b: Course) {
+            if ( a.date < b.date ) {
+                return -1;
+            } else if ( a.date > b.date) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
     }
 
 }
