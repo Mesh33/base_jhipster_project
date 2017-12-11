@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "geojson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raceid",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20171205134016",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "itinerary",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
