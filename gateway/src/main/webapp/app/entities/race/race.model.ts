@@ -14,6 +14,7 @@ export class Race implements BaseEntity {
         public department?: string,
         public raceName?: string,
         public raceType?: RaceType,
+        public organisateur?: string,
         public organizer?: BaseEntity,
         public participants?: BaseEntity[],
         public volunteers?: BaseEntity[],

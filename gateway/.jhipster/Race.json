@@ -53,12 +53,21 @@
             "fieldName": "raceType",
             "fieldType": "RaceType",
             "fieldValues": "MARATHON,SKI"
+        },
+        {
+            "fieldName": "organisateur",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "changelogDate": "20171107091857",
-    "entityTableName": "race",
     "dto": "no",
-    "pagination": "no",
     "service": "no",
-    "microserviceName": "microservice1"
+    "entityTableName": "race",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "microservice1",
+    "searchEngine": false
 }
