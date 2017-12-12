@@ -7,6 +7,7 @@ import {
     CourseComponent,
     CourseNewComponent,
     CourseDetailComponent,
+    InscriptionComponent,
     courseRoute
 } from './';
 
@@ -23,6 +24,7 @@ const ENTITY_STATES = [
         CourseComponent,
         CourseNewComponent,
         CourseDetailComponent,
+        InscriptionComponent
     ],
     entryComponents: [
         CourseComponent,

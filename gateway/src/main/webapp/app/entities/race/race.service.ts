@@ -25,6 +25,7 @@ export class RaceService {
 
     update(race: Race): Observable<Race> {
         const copy = this.convert(race);
+        console.log(copy);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
             this.convertItemFromServer(jsonResponse);

@@ -53,10 +53,20 @@ spring:
             hibernate.cache.use_minimal_puts: true
             hibernate.cache.hazelcast.use_lite_member: true
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+#        host: smtp-mail.outlook.com
+#        username: MesCourses-ecom-2017-2018@outlook.com
+#        password: jhipsterclavieRIP
+#            ssl.trust: smtp-mail.outlook.com
+        host: smtp.gmail.com
+        port: 587
+        username: mescourses.ecom@gmail.com  
+        password: ecom.mescourses          
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
     messages:
         cache-seconds: 1
     thymeleaf:
