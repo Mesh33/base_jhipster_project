@@ -48,8 +48,9 @@ public class Race implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "race_type")
     private RaceType raceType;
-    
-    @Column(name="organisateur", nullable = false)
+
+    @NotNull
+    @Column(name = "organisateur", nullable = false)
     private String organisateur;
 
     @OneToOne
@@ -153,6 +154,19 @@ public class Race implements Serializable {
         this.raceType = raceType;
     }
 
+    public String getOrganisateur() {
+        return organisateur;
+    }
+
+    public Race organisateur(String organisateur) {
+        this.organisateur = organisateur;
+        return this;
+    }
+
+    public void setOrganisateur(String organisateur) {
+        this.organisateur = organisateur;
+    }
+
     public Organizer getOrganizer() {
         return organizer;
     }
@@ -247,6 +261,7 @@ public class Race implements Serializable {
             ", department='" + getDepartment() + "'" +
             ", raceName='" + getRaceName() + "'" +
             ", raceType='" + getRaceType() + "'" +
+            ", organisateur='" + getOrganisateur() + "'" +
             "}";
     }
 }

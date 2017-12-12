@@ -58,6 +58,9 @@ public class RaceResourceIntTest {
     private static final RaceType DEFAULT_RACE_TYPE = RaceType.MARATHON;
     private static final RaceType UPDATED_RACE_TYPE = RaceType.SKI;
 
+    private static final String DEFAULT_ORGANISATEUR = "AAAAAAAAAA";
+    private static final String UPDATED_ORGANISATEUR = "BBBBBBBBBB";
+
     @Autowired
     private RaceRepository raceRepository;
 
@@ -100,7 +103,8 @@ public class RaceResourceIntTest {
             .price(DEFAULT_PRICE)
             .department(DEFAULT_DEPARTMENT)
             .raceName(DEFAULT_RACE_NAME)
-            .raceType(DEFAULT_RACE_TYPE);
+            .raceType(DEFAULT_RACE_TYPE)
+            .organisateur(DEFAULT_ORGANISATEUR);
         return race;
     }
 
@@ -130,6 +134,7 @@ public class RaceResourceIntTest {
         assertThat(testRace.getDepartment()).isEqualTo(DEFAULT_DEPARTMENT);
         assertThat(testRace.getRaceName()).isEqualTo(DEFAULT_RACE_NAME);
         assertThat(testRace.getRaceType()).isEqualTo(DEFAULT_RACE_TYPE);
+        assertThat(testRace.getOrganisateur()).isEqualTo(DEFAULT_ORGANISATEUR);
     }
 
     @Test
@@ -189,6 +194,24 @@ public class RaceResourceIntTest {
 
     @Test
     @Transactional
+    public void checkOrganisateurIsRequired() throws Exception {
+        int databaseSizeBeforeTest = raceRepository.findAll().size();
+        // set the field null
+        race.setOrganisateur(null);
+
+        // Create the Race, which fails.
+
+        restRaceMockMvc.perform(post("/api/races")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(race)))
+            .andExpect(status().isBadRequest());
+
+        List<Race> raceList = raceRepository.findAll();
+        assertThat(raceList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllRaces() throws Exception {
         // Initialize the database
         raceRepository.saveAndFlush(race);
@@ -203,7 +226,8 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE)))
             .andExpect(jsonPath("$.[*].department").value(hasItem(DEFAULT_DEPARTMENT.toString())))
             .andExpect(jsonPath("$.[*].raceName").value(hasItem(DEFAULT_RACE_NAME.toString())))
-            .andExpect(jsonPath("$.[*].raceType").value(hasItem(DEFAULT_RACE_TYPE.toString())));
+            .andExpect(jsonPath("$.[*].raceType").value(hasItem(DEFAULT_RACE_TYPE.toString())))
+            .andExpect(jsonPath("$.[*].organisateur").value(hasItem(DEFAULT_ORGANISATEUR.toString())));
     }
 
     @Test
@@ -222,7 +246,8 @@ public class RaceResourceIntTest {
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE))
             .andExpect(jsonPath("$.department").value(DEFAULT_DEPARTMENT.toString()))
             .andExpect(jsonPath("$.raceName").value(DEFAULT_RACE_NAME.toString()))
-            .andExpect(jsonPath("$.raceType").value(DEFAULT_RACE_TYPE.toString()));
+            .andExpect(jsonPath("$.raceType").value(DEFAULT_RACE_TYPE.toString()))
+            .andExpect(jsonPath("$.organisateur").value(DEFAULT_ORGANISATEUR.toString()));
     }
 
     @Test
@@ -248,7 +273,8 @@ public class RaceResourceIntTest {
             .price(UPDATED_PRICE)
             .department(UPDATED_DEPARTMENT)
             .raceName(UPDATED_RACE_NAME)
-            .raceType(UPDATED_RACE_TYPE);
+            .raceType(UPDATED_RACE_TYPE)
+            .organisateur(UPDATED_ORGANISATEUR);
 
         restRaceMockMvc.perform(put("/api/races")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -265,6 +291,7 @@ public class RaceResourceIntTest {
         assertThat(testRace.getDepartment()).isEqualTo(UPDATED_DEPARTMENT);
         assertThat(testRace.getRaceName()).isEqualTo(UPDATED_RACE_NAME);
         assertThat(testRace.getRaceType()).isEqualTo(UPDATED_RACE_TYPE);
+        assertThat(testRace.getOrganisateur()).isEqualTo(UPDATED_ORGANISATEUR);
     }
 
     @Test

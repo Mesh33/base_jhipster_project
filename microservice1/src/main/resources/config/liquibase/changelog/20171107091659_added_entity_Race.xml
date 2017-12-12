@@ -45,6 +45,10 @@
             <column name="race_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+
+            <column name="organisateur" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
             <column name="organizer_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
