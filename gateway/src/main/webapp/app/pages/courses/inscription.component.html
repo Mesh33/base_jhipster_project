@@ -1,3 +1,54 @@
-<p>
-  inscription works!
-</p>
+
+<div *ngIf="course">
+    <h2>
+        {{course.raceName}}
+        <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info float-right">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Retour</span>
+    </h2>
+</button>
+    <hr/>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Réglement de la course</h4>
+                    <p class="card-text">
+                        <h5>ARTICLE A :</h5>
+                        Les épreuves sont ouvertes :
+                        <ul>
+                            <li>Aux personnes justifiant de la qualité d’agent en activité au jour de la compétition</li>
+                            <li>Par dérogation et selon les règlements des disciplines, il peut être admis la participation de conjoints, concubins déclarés ou enfants à charge (âgés de 18 à 25 ans inclus au jour de la compétition).</li>
+                            <li>Dans le cadre des épreuves individuelles, seules les personnes désignées dans l’alinéa a) peuvent être déclarées « Champion de France ANSCAM »</li>
+                        </ul>
+                        <h5>ARTICLE B :</h5>
+                        Tout participant à une compétition organisée par l’ANSCAM doit être en possession d’un pas’sport bleu. Celui-ci doit être signé par le titulaire et la Direction de son entité. Il doit être validé par l’ANSCAM.
+                        Tout enregistrement sur le bulletin d’inscription envoyé à l’ANSCAM ne comportant pas le numéro de Pas’ sport sera considéré comme caduc.
+                        Il appartient au Responsable de l’entité de procéder à ces vérifications avant envoi.
+
+                        <h5>ARTICLE C :</h5>
+                        Tout participant non licencié, à titre fédéral, doit être en possession d’un certificat médical l’autorisant à pratiquer la discipline concernée datant de moins d’un an.
+                        Ce certificat médical de moins d’un an, autorisant la compétition doit être joint impérativement au bulletin d’inscription. En son absence le joueur ne pourra pas participer à la compétition.
+                        <h5>ARTICLE D :</h5>
+                        Les frais de voyage et de séjour, ainsi que les frais d’organisation sont à la charge des participants.
+                        <h5>ARTICLE E :</h5>
+                        Toute contestation survenant au cours de la compétition doit être formulée par écrit dans l’heure qui suit la fin de l’épreuve concernée et sera adressée au Responsable National qui en informera le ou les Administrateurs présents à la manifestation.
+                        Les Administrateurs, représentant le Conseil d’Administration, présents sur la manifestation délibèreront avec le RN sur la suite à donner à cette contestation.
+                        Un R.N. ou un Administrateur ne pourra statuer sur une contestation concernant son entité.
+                    </p>
+                    <button type="button" class="btn btn-info" (click)="accept()" *ngIf="!accepted">J'accepte</button>
+                    <span *ngIf="accepted" class="font-italic text-right">Vous avez accepté le réglement.</span>
+                </div>
+            </div>
+            <br/>
+            <button type="button" class="btn btn-success float-right" *ngIf="accepted">
+                Payer : {{course.price}} €
+            </button>
+        </div>
+        <div class="col-md-3">
+            <p class="font-italic">Sponsors de la course</p>
+            <img src="../../../content/images/logos/sponsors.png" height="500" width="300"/>
+        </div>
+    </div>
+</div>
