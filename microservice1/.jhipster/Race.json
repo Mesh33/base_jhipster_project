@@ -2,14 +2,6 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "organizer",
-            "otherEntityName": "organizer",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "race"
-        },
-        {
             "relationshipType": "one-to-many",
             "relationshipName": "participants",
             "otherEntityName": "participant",

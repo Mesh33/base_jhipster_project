@@ -62,13 +62,6 @@
                 </small>
             </div>
         </div>
-        <div class="form-group">
-            <label class="form-control-label" for="field_organizer">Organizer</label>
-            <select class="form-control" id="field_organizer" name="organizer" [(ngModel)]="course.organizer">
-                <option [ngValue]="null"></option>
-                <option [ngValue]="organizerOption.id === course.organizer?.id ? course.organizer : organizerOption" *ngFor="let organizerOption of organizers; trackBy: trackOrganizerById">{{organizerOption.id}}</option>
-            </select>
-        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
