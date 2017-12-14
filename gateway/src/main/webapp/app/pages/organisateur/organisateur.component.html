@@ -1,0 +1,57 @@
+<div>
+    <h2><span>Espace Organisateur</span></h2>
+    <jhi-alert></jhi-alert>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive" *ngIf="courses">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th><span>Type</span></th>
+                        <th><span>Nom</span></th>
+                        <th><span>Département</span></th>
+                        <th><span>Lieu</span></th>
+                        <th><span>Date</span></th>
+                        <th><span>Prix</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let course of courses ;trackBy: trackId">
+                        <td>{{course.raceType}}</td>
+                        <td>{{course.raceName}}</td>
+                        <td>{{course.department}}</td>
+                        <td>{{course.place}}</td>
+                        <td>{{course.date | date:"dd/MM/yyyy"}}</td>
+                        <td>{{course.price}} €</td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        [routerLink]="['../course', course.id ]"
+                                        class="btn btn-success btn-sm">
+                                    <span class="fa fa-eye"></span>
+                                    <span class="d-none d-md-inline">Détails</span>
+                                </button>
+                                <button type="submit"
+                                         [routerLink]="['./edition', course.id ]"
+                                         class="btn btn-info btn-sm">
+                                    <span class="fa fa-pencil"></span>
+                                    <span class="d-none d-md-inline">Editer</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="courses.length ==0" class="text-center">
+                    Vous ne semblez pas avoir organisé de courses.<span class="fa fa-frown-o"></span>
+                </div>
+            </div>
+            <div *ngIf="!courses" class="text-center">
+                Acheminement des courses... <span class="fa fa-compass"></span>
+            </div>
+        </div>
+
+    </div>
+</div>

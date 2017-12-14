@@ -113,10 +113,10 @@ export class Course implements BaseEntity {
         public department?: CourseDept,
         public raceName?: string,
         public raceType?: CourseType,
+        public organisateur?: string,
         public organizer?: BaseEntity,
         public participants?: BaseEntity[],
         public volunteers?: BaseEntity[],
-        public organisateur?: string,
     ) {
     }
 }

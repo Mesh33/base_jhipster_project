@@ -53,10 +53,6 @@ public class Race implements Serializable {
     @Column(name = "organisateur", nullable = false)
     private String organisateur;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Organizer organizer;
-
     @OneToMany(mappedBy = "race")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -165,19 +161,6 @@ public class Race implements Serializable {
 
     public void setOrganisateur(String organisateur) {
         this.organisateur = organisateur;
-    }
-
-    public Organizer getOrganizer() {
-        return organizer;
-    }
-
-    public Race organizer(Organizer organizer) {
-        this.organizer = organizer;
-        return this;
-    }
-
-    public void setOrganizer(Organizer organizer) {
-        this.organizer = organizer;
     }
 
     public Set<Participant> getParticipants() {

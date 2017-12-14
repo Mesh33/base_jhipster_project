@@ -161,6 +161,18 @@ public class RaceResource {
     	}
     }
     
+    /**
+     * GET /races/_organizer gives all the races organized by the given user login
+     * 
+     * @return the list of races organized by the given user login
+     */
+    @GetMapping("races/_organizer")
+    @Timed
+    public List<Race> getOrganizedRaces(
+        	@RequestParam(value = "user") String user ) {
+    	return raceRepository.findByOrganisateur(user);
+    }
+    
     
     /**
      * DELETE  /races/:id : delete the "id" race.

@@ -29,6 +29,7 @@ export const createCustomRequestOption = (req?: any): BaseRequestOptions => {
         params.set('dept', req.dept);
         params.set('date', req.date);
         params.set('place', req.place);
+        params.set('user', req.user);
 
         console.log(params);
 

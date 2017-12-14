@@ -9,7 +9,6 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { Course} from './course.model';
 import { CourseService } from './course.service';
-import { Organizer, OrganizerService } from '../../entities/organizer';
 import { ResponseWrapper } from '../../shared';
 import {Principal} from '../../shared/auth/principal.service';
 
@@ -120,13 +119,11 @@ export class CourseNewComponent implements OnInit {
         '(95) - Val-d\'oise'
     ];
 
-    organizers: Organizer[];
     dateDp: any;
 
     constructor(
         private alertService: JhiAlertService,
         private courseService: CourseService,
-        private organizerService: OrganizerService,
         private eventManager: JhiEventManager,
         private router: Router,
         private principal: Principal
@@ -184,7 +181,7 @@ export class CourseNewComponent implements OnInit {
     private onSaveSuccess(result: Course) {
         this.eventManager.broadcast({ name: 'raceListModification', content: 'OK'});
         this.isSaving = false;
-        this.router.navigateByUrl('race/' + result.id);
+        this.router.navigateByUrl('course/' + result.id);
     }
 
     private onSaveError() {
@@ -193,9 +190,5 @@ export class CourseNewComponent implements OnInit {
 
     private onError(error: any) {
         this.alertService.error(error.message, null, null);
-    }
-
-    trackOrganizerById(index: number, item: Organizer) {
-        return item.id;
     }
 }
