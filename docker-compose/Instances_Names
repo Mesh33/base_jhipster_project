@@ -1,0 +1,12 @@
+REGISTRY : 
+Registry 		10.0.0.20
+
+Gateway:
+Gateway			10.0.0.30
+Gateway-Mysql		10.0.0.31
+
+Microservice1:
+Microservice1		10.0.0.40
+Microservice1-Mysql 	10.0.0.41
+
+

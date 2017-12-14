@@ -1,0 +1,79 @@
+k_template='[
+		{
+		    "containerDefinitions": [
+			{
+			    "dnsSearchDomains": [],
+			    "logConfiguration": null,
+			    "entryPoint": [],
+			    "portMappings": [
+				{
+				    "hostPort": 8761,
+				    "protocol": "tcp",
+				    "containerPort": 8761
+				}
+			    ],
+			    "command": [],
+			    "linuxParameters": {
+				"capabilities": {
+				    "add": null,
+				    "drop": null
+				},
+				"devices": null,
+				"initProcessEnabled": null
+			    },
+			    "cpu": 0,
+			    "environment": [
+				{
+				    "name": "JHIPSTER_REGISTRY_PASSWORD",
+				    "value": "admin"
+				},
+				{
+				    "name": "SECURITY_USER_PASSWORD",
+				    "value": "admin"
+				},
+				{
+				    "name": "SPRING_PROFILES_ACTIVE",
+				    "value": "dev,native"
+				}
+			    ],
+			    "ulimits": null,
+			    "dnsServers": [],
+			    "mountPoints": [
+				{
+				    "readOnly": null,
+				    "containerPath": "/central-config",
+				    "sourceVolume": "volume-0"
+				}
+			    ],
+			    "workingDirectory": null,
+			    "dockerSecurityOptions": [],
+			    "memory": 200,
+			    "memoryReservation": null,
+			    "volumesFrom": [],
+			    "image": "142221551378.dkr.ecr.eu-central-1.amazonaws.com/jhipster-registry",
+			    "disableNetworking": null,
+			    "essential": true,
+			    "links": [],
+			    "hostname": "jhipster-registry",
+			    "extraHosts": null,
+			    "user": null,
+			    "readonlyRootFilesystem": false,
+			    "dockerLabels": null,
+			    "privileged": true,
+			    "name": "jhipster-registry"
+			}
+		    ],
+		    "taskRoleArn": null,
+		    "family": "all-task",
+		    "networkMode": "bridge",
+		    "volumes": [
+			{
+			    "name": "volume-0",
+			    "host": {
+				"sourcePath": "/home/ec2-user/central-config-server"
+			    }
+			}
+		    ],
+		    "placementConstraints": []
+		}
+	]'
