@@ -2,9 +2,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { GatewaySharedModule } from '../../shared';
-import { CourseService } from "../courses/course.service";
-import { organisateurRoute } from "./organisateur.route";
-import { OrganisateurComponent } from "./organisateur.component";
+import { CourseService } from '../courses/course.service';
+import { organisateurRoute } from './organisateur.route';
+import { OrganisateurComponent } from './organisateur.component';
+import { CourseEditionComponent } from './course-edition.component';
 
 const ENTITY_STATES = [
     ...organisateurRoute,
@@ -16,10 +17,12 @@ const ENTITY_STATES = [
         RouterModule.forRoot(ENTITY_STATES, { useHash: true })
     ],
     declarations: [
-        OrganisateurComponent
+        OrganisateurComponent,
+        CourseEditionComponent
     ],
     entryComponents: [
-        OrganisateurComponent
+        OrganisateurComponent,
+        CourseEditionComponent
     ],
     providers: [
         CourseService

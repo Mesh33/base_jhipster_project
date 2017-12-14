@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { GatewayCourseModule } from './courses/course.module';
-import { GatewayOrganisateurModule } from "./organisateur/organisateur.module";
+import { GatewayOrganisateurModule } from './organisateur/organisateur.module';
 
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 

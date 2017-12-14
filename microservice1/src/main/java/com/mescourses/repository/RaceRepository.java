@@ -18,6 +18,8 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface RaceRepository extends JpaRepository<Race, Long> {
 	
+	List<Race> findByOrganisateur(String organisateur);
+	
 	@Query("SELECT r FROM Race r "
 			+ "WHERE r.raceType = :type "
 			+ "AND r.date = :date "

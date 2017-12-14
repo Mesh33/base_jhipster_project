@@ -12,6 +12,7 @@ export class CourseService {
 
     private resourceUrl = 'microservice1/api/races';
     private resourceSearchUrl = 'microservice1/api/races/_search';
+    private resourceOrgaUrl = 'microservice1/api/races/_organizer';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 
@@ -54,8 +55,14 @@ export class CourseService {
     search(req?: any): Observable<ResponseWrapper> {
         this.convertQuery(req);
         const options = createCustomRequestOption(req);
-        console.log(options);
         return this.http.get(this.resourceSearchUrl, options)
+            .map((res: any) => this.convertResponse(res));
+    }
+
+    getOrganised(req?: any): Observable<ResponseWrapper> {
+        this.convertQuery(req);
+        const options = createCustomRequestOption(req);
+        return this.http.get(this.resourceOrgaUrl, options)
             .map((res: any) => this.convertResponse(res));
     }
 

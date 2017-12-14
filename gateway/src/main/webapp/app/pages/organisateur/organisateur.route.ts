@@ -1,7 +1,8 @@
 import {Routes} from '@angular/router';
 import { UserRouteAccessService } from '../../shared';
 
-import { OrganisateurComponent } from "./organisateur.component";
+import { OrganisateurComponent } from './organisateur.component';
+import { CourseEditionComponent } from './course-edition.component';
 
 export const organisateurRoute: Routes = [
     {
@@ -12,5 +13,13 @@ export const organisateurRoute: Routes = [
             pageTitle: 'Courses'
         },
         canActivate: [UserRouteAccessService]
-    }
+    }, {
+        path: 'organisateur/edition/:id',
+        component: CourseEditionComponent,
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'Courses'
+        },
+        canActivate: [UserRouteAccessService]
+    },
 ];
