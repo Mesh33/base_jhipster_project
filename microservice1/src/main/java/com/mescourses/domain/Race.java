@@ -58,11 +58,6 @@ public class Race implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Participant> participants = new HashSet<>();
 
-    @OneToMany(mappedBy = "race")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Volunteer> volunteers = new HashSet<>();
-
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -188,30 +183,6 @@ public class Race implements Serializable {
         this.participants = participants;
     }
 
-    public Set<Volunteer> getVolunteers() {
-        return volunteers;
-    }
-
-    public Race volunteers(Set<Volunteer> volunteers) {
-        this.volunteers = volunteers;
-        return this;
-    }
-
-    public Race addVolunteers(Volunteer volunteer) {
-        this.volunteers.add(volunteer);
-        volunteer.setRace(this);
-        return this;
-    }
-
-    public Race removeVolunteers(Volunteer volunteer) {
-        this.volunteers.remove(volunteer);
-        volunteer.setRace(null);
-        return this;
-    }
-
-    public void setVolunteers(Set<Volunteer> volunteers) {
-        this.volunteers = volunteers;
-    }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 
     @Override
