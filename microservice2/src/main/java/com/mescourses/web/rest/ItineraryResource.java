@@ -89,19 +89,19 @@ public class ItineraryResource {
         return itineraryRepository.findAll();
         }
 
-//    /**
-//     * GET  /itineraries/:id : get the "id" itinerary.
-//     *
-//     * @param id the id of the itinerary to retrieve
-//     * @return the ResponseEntity with status 200 (OK) and with body the itinerary, or with status 404 (Not Found)
-//     */
-//    @GetMapping("/itineraries/{id}")
-//    @Timed
-//    public ResponseEntity<Itinerary> getItinerary(@PathVariable Long id) {
-//        log.debug("REST request to get Itinerary : {}", id);
-//        Itinerary itinerary = itineraryRepository.findOne(id);
-//        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(itinerary));
-//    }
+    /**
+     * GET  /itineraries/:id : get the "id" itinerary.
+     *
+     * @param id the id of the itinerary to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the itinerary, or with status 404 (Not Found)
+     */
+    @GetMapping("/itineraries/{id}")
+    @Timed
+    public ResponseEntity<Itinerary> getItinerary(@PathVariable Long id) {
+        log.debug("REST request to get Itinerary : {}", id);
+        Itinerary itinerary = itineraryRepository.findOne(id);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(itinerary));
+    }
 
     /**
      * DELETE  /itineraries/:id : delete the "id" itinerary.
@@ -123,7 +123,7 @@ public class ItineraryResource {
      * @param raceid the id of the race whose itinerary is to be retrieved
      * @return the ResponseEntity with status 200 (OK) and with body the itinerary, or with status 404 (Not Found)
      */
-    @GetMapping("/itineraries/{raceid}")
+    @GetMapping("/itineraries/customMapping/{raceid}")
     @Timed
     public ResponseEntity<Itinerary> getItineraryRace(@PathVariable Integer raceid) {
         log.debug("REST request to get Itinerary : {}", raceid);
