@@ -38,6 +38,7 @@ export class CourseEditionComponent implements OnInit {
 
     save() {
         this.isSaving = true;
+        console.log(this.course);
         this.subscribeToSaveResponse(
             this.courseService.update(this.course));
     }

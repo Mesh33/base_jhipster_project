@@ -8,6 +8,8 @@ import { Course } from './course.model';
 import { CourseService } from './course.service';
 import { Participant } from '../../entities/participant/participant.model';
 import { ParticipantService } from '../../entities/participant/participant.service';
+import {BaseEntity} from '../../shared/model/base-entity';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'jhi-inscription',
@@ -28,6 +30,7 @@ export class InscriptionComponent implements OnInit, OnDestroy {
         private principal: Principal,
         private route: ActivatedRoute,
         private participantService: ParticipantService,
+        private router: Router,
     ) { }
 
     ngOnInit() {
@@ -81,9 +84,7 @@ export class InscriptionComponent implements OnInit, OnDestroy {
 
     private onSaveSuccess(result: Participant) {
         this.isSaving = false;
-        this.course.participants.push(result);
-        console.log(this.course);
-        this.courseService.update(this.course);
+        this.router.navigateByUrl('coureur');
     }
 
     private onSaveError() {
