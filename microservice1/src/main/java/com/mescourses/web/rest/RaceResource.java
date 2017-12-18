@@ -143,8 +143,10 @@ public class RaceResource {
     	@RequestParam(value = "dept", required = false) String dept,
     	@RequestParam(value = "place", required = false) String place,
     	@RequestParam(value = "date", required = false) LocalDate date) {
+    	
        	
     	if(place == null) place = "";
+    	place = place.toLowerCase();
     	if(dept == null) dept = "";
     	if(type == null) {
     		if(date==null) {

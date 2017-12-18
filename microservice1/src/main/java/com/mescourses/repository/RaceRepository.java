@@ -23,7 +23,7 @@ public interface RaceRepository extends JpaRepository<Race, Long> {
 	@Query("SELECT r FROM Race r "
 			+ "WHERE r.raceType = :type "
 			+ "AND r.date = :date "
-			+ "AND r.place LIKE %:place% "
+			+ "AND LOWER(r.place) LIKE %:place% "
 			+ "AND r.department LIKE %:dept%")
 	List<Race> findRaceCustomAll(
 			@Param("type") RaceType type,
@@ -34,7 +34,7 @@ public interface RaceRepository extends JpaRepository<Race, Long> {
 	
 	@Query("SELECT r FROM Race r "
 			+ "WHERE r.date = :date "
-			+ "AND r.place LIKE %:place% "
+			+ "AND LOWER(r.place) LIKE %:place% "
 			+ "AND r.department LIKE %:dept%")
 	List<Race> findRaceCustomNoType(
 			@Param("dept") String dept,
@@ -44,7 +44,7 @@ public interface RaceRepository extends JpaRepository<Race, Long> {
 	
 	@Query("SELECT r FROM Race r "
 			+ "WHERE r.raceType = :type "
-			+ "AND r.place LIKE %:place% "
+			+ "AND LOWER(r.place) LIKE %:place% "
 			+ "AND r.department LIKE %:dept%")
 	List<Race> findRaceCustomNoDate(
 			@Param("type") RaceType type,
@@ -53,7 +53,7 @@ public interface RaceRepository extends JpaRepository<Race, Long> {
 			);
 	
 	@Query("SELECT r FROM Race r "
-			+ "WHERE r.place LIKE %:place% "
+			+ "WHERE LOWER(r.place) LIKE %:place% "
 			+ "AND r.department LIKE %:dept%")
 	List<Race> findRaceCustomSimple(
 			@Param("dept") String dept,
