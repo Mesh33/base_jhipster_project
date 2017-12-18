@@ -21,7 +21,7 @@ services:
             --explicit_defaults_for_timestamp
     
     microservice1-app:
-        image: microservice-1
+        image: microservice1
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
@@ -35,6 +35,24 @@ services:
             - MYSQL_USER=root
             - MYSQL_ALLOW_EMPTY_PASSWORD=yes
             - MYSQL_DATABASE=microservice1
+        command:             mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
+            --explicit_defaults_for_timestamp
+    
+    microservice2-app:
+        image: microservice2
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:mysql://microservice2-mysql:3306/microservice2?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=30
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    microservice2-mysql:
+        image: mysql:5.7.20
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=microservice2
         command:             mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
             --explicit_defaults_for_timestamp
     

@@ -14,6 +14,8 @@ Launch all your infrastructure by running: `docker-compose up -d`.
 - gateway's mysql database
 - microservice1 (microservice application)
 - microservice1's mysql database
+- microservice2 (microservice application)
+- microservice2's mysql database
 
 ### Additional Services:
 
