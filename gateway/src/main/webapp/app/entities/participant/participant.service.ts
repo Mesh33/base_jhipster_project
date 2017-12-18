@@ -9,6 +9,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 export class ParticipantService {
 
     private resourceUrl = 'microservice1/api/participants';
+    private resourceUrl2 = 'microservice1/api/participants/byuser';
 
     constructor(private http: Http) { }
 
@@ -40,6 +41,12 @@ export class ParticipantService {
 
     delete(id: number): Observable<Response> {
         return this.http.delete(`${this.resourceUrl}/${id}`);
+    }
+
+    getByUserName(req?: any): Observable<ResponseWrapper> {
+        const options = createRequestOption(req);
+        return this.http.get(this.resourceUrl2, options)
+            .map((res: Response) => this.convertResponse(res));
     }
 
     private convertResponse(res: Response): ResponseWrapper {

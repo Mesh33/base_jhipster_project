@@ -2,7 +2,7 @@ package com.mescourses.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mescourses.domain.Participant;
-
+import com.mescourses.domain.enumeration.RaceType;
 import com.mescourses.repository.ParticipantRepository;
 import com.mescourses.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -87,6 +87,20 @@ public class ParticipantResource {
     public List<Participant> getAllParticipants() {
         log.debug("REST request to get all Participants");
         return participantRepository.findAll();
+        }
+    
+    /**
+     * GET  /participants/byuser : get all the participants.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of participants in body
+     */
+    @GetMapping("/participants/byuser")
+    @Timed
+    public List<Participant> getByUserParticipants(
+        	@RequestParam(value = "query") String userName
+    		) {
+        log.debug("REST request to get Participants by user param");
+        return participantRepository.findByUsername(userName);
         }
 
     /**
