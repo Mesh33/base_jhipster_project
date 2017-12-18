@@ -64,7 +64,6 @@ export class CourseEditionComponent implements OnInit {
     load(id) {
         this.courseService.find(id).subscribe((course) => {
             this.course = course;
-            console.log(this.course);
         });
     }
 

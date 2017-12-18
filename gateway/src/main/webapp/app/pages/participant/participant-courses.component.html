@@ -2,7 +2,6 @@
     <h2>
         <span>Mes inscriptions</span>
     </h2>
-    <jhi-alert></jhi-alert>
     <div class="row">
     </div>
     <br/>
@@ -23,9 +22,10 @@
                 <td><div *ngIf="participant.race">{{participant.race?.raceType}}</div></td>
                 <td><div *ngIf="participant.race">{{participant.race?.department}}</div></td>
                 <td><div *ngIf="participant.race">{{participant.race?.place}}</div></td>
-                <td><div *ngIf="participant.race">{{participant.race?.date}}</div></td>
+                <td><div *ngIf="participant.race">{{participant.race?.date | date:"dd/MM/yyyy"}}</div></td>
             </tr>
             </tbody>
         </table>
+        <div class="text-center" *ngIf="participants.length==0">Vous ne semblez pas vous être inscrit à des courses...</div>
     </div>
 </div>
