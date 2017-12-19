@@ -1,6 +1,8 @@
 version: '2'
 services:
     gateway-app:
+        volumes:
+               - /home/mesh/S9/ecomaster/base_jhipster_project/docker-compose/:/key
         image: gateway
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
@@ -10,7 +12,7 @@ services:
             - JHIPSTER_SLEEP=30
             - JHIPSTER_REGISTRY_PASSWORD=admin
         ports:
-            - 8080:8080
+            - 443:443
     gateway-mysql:
         image: mysql:5.7.19
         environment:
@@ -21,7 +23,7 @@ services:
             --explicit_defaults_for_timestamp
     
     microservice1-app:
-        image: microservice1
+        image: microservice-1
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
