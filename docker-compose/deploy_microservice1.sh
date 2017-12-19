@@ -44,11 +44,11 @@ make_task_def(){
             "environment": [
                 {
                     "name": "EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE",
-                    "value": "http://admin:admin@jhipster-registry:8761/eureka"
+                    "value": "http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka"
                 },
                 {
                     "name": "JHIPSTER_REGISTRY_PASSWORD",
-                    "value": "admin"
+                    "value": "%s"
                 },
                 {
                     "name": "JHIPSTER_SLEEP",
