@@ -50,11 +50,17 @@ spring:
             hibernate.cache.hazelcast.instance_name: gateway
             hibernate.cache.use_minimal_puts: true
             hibernate.cache.hazelcast.use_lite_member: true
-    mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+    mail: 
+        host: smtp.gmail.com 
+        port: 587 
+        username: mescourses.ecom@gmail.com   
+        password: ${MAIL_PASS}
+        protocol: smtp 
+        tls: true 
+        properties.mail.smtp: 
+            auth: true 
+            starttls.enable: true 
+            ssl.trust: smtp.gmail.com 
     thymeleaf:
         cache: true
     zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
@@ -85,11 +91,16 @@ liquibase:
 #        keyAlias: gateway
 # ===================================================================
 server:
-    port: 8080
+    port: 443
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
         min-response-size: 1024
+    ssl:
+        key-store: /key/keystore.p12
+        key-store-password: ${KEY_PASS}
+        keyStoreType: PKCS12
+        keyAlias: tomcat
 
 # ===================================================================
 # JHipster specific properties
