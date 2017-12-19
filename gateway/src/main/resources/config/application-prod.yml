@@ -91,16 +91,11 @@ liquibase:
 #        keyAlias: gateway
 # ===================================================================
 server:
-    port: 443
+    port: 8080
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
         min-response-size: 1024
-    ssl:
-        key-store: /key/keystore.p12
-        key-store-password: stricule09
-        keyStoreType: PKCS12
-        keyAlias: tomcat
 
 # ===================================================================
 # JHipster specific properties
