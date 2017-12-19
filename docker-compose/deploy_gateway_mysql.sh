@@ -112,7 +112,7 @@ placementConstraints='
       "expression": "attribute:Name=~Gateway-Mysql"
 }'
 
-	task_def=$(printf "$task_template" $AWS_ACCOUNT_ID)
+	task_def=$(printf "$task_template" $SPRING_DATASOURCE_PASSWORD)
 	echo task_def
 }
 

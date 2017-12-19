@@ -42,11 +42,11 @@ make_task_def(){
       "environment": [
         {
           "name": "JHIPSTER_REGISTRY_PASSWORD",
-          "value": "admin"
+          "value": "%s"
         },
         {
           "name": "SECURITY_USER_PASSWORD",
-          "value": "admin"
+          "value": "%s"
         },
         {
           "name": "SPRING_PROFILES_ACTIVE",
@@ -72,7 +72,7 @@ placementConstraints='
       "expression": "attribute:Name=~Registry"
 }'
 
-	task_def=$(printf "$task_template" $AWS_ACCOUNT_ID)
+	task_def=$(printf "$task_template" $JHIPSTER_REGISTRY_PASSWORD $SECURITY_USER_PASSWORD)
 	echo task_def
 }
 

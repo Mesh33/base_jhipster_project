@@ -120,7 +120,7 @@ placementConstraints='
       "expression": "attribute:Name=~Gateway"
 }'
 
-	task_def=$(printf "$task_template" $AWS_ACCOUNT_ID)
+	task_def=$(printf "$task_template" $KEY_PASS $MAIL_PASS $JHIPSTER_REGISTRY_PASSWORD)
 	echo task_def
 }
 

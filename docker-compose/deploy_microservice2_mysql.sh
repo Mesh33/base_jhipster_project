@@ -10,9 +10,9 @@ configure_aws_cli(){
 
 deploy_cluster() {
 
-    family="MesCourses-microservice1-mysql"
+    family="MesCourses-microservice2-mysql"
     cluster="arn:aws:ecs:eu-central-1:142221551378:cluster/test3"
-    service="MesCourses-microservice1-mysql"
+    service="MesCourses-microservice2-mysql"
 
     make_task_def
     register_definition
@@ -57,7 +57,7 @@ make_task_def(){
         },
         {
           "name": "MYSQL_DATABASE",
-          "value": "microservice1"
+          "value": "microservice2"
         },
         {
           "name": "MYSQL_USER",
@@ -79,7 +79,7 @@ make_task_def(){
       "links": [],
       "readonlyRootFilesystem": false,
       "privileged": false,
-      "name": "microservice1-mysql"
+      "name": "microservice2-mysql"
     }'
 
 
@@ -95,7 +95,7 @@ make_task_def(){
 placementConstraints='
 {
       "type": "memberOf",
-      "expression": "attribute:Name=~Microservice1-Mysql"
+      "expression": "attribute:Name=~Microservice2-Mysql"
 }'
 
 	task_def=$(printf "$task_template" $SPRING_DATASOURCE_PASSWORD)
@@ -104,8 +104,8 @@ placementConstraints='
 
 push_ecr_image(){
 	eval $(aws ecr get-login --no-include-email --region eu-central-1)
-	docker tag microservice1:latest 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice1:latest
-	docker push 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice1:latest
+	docker tag microservice2:latest 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice2:latest
+	docker push 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice2:latest
 }
 
 register_definition() {

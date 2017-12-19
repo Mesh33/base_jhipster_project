@@ -10,9 +10,9 @@ configure_aws_cli(){
 
 deploy_cluster() {
 
-    family="MesCourses-microservice1"
+    family="MesCourses-microservice2"
     cluster="arn:aws:ecs:eu-central-1:142221551378:cluster/test3"
-    service="MesCourses-microservice1"
+    service="MesCourses-microservice2"
 
     make_task_def
     register_definition
@@ -60,7 +60,7 @@ make_task_def(){
                 },
                 {
                     "name": "SPRING_DATASOURCE_URL",
-                    "value": "jdbc:mysql://microservice1-mysql:3306/microservice1?useUnicode=true&characterEncoding=utf8&useSSL=false"
+                    "value": "jdbc:mysql://microservice2-mysql:3306/microservice2?useUnicode=true&characterEncoding=utf8&useSSL=false"
                 },
                 {
                     "name": "SPRING_PROFILES_ACTIVE",
@@ -70,7 +70,7 @@ make_task_def(){
             "dnsServers": [],
             "dockerSecurityOptions": [],
             "memory": 950,
-            "image": "142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice1",
+            "image": "142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice2",
             "essential": true,
             "links": [],
             "extraHosts": [
@@ -80,12 +80,12 @@ make_task_def(){
                 },
                 {
                     "ipAddress": "10.0.0.41",
-                    "hostname": "microservice1-mysql"
+                    "hostname": "microservice2-mysql"
                 }
             ],
             "readonlyRootFilesystem": false,
             "privileged": true,
-            "name": "microservice1-app"
+            "name": "microservice2-app"
         }
 ]'
 
@@ -94,7 +94,7 @@ make_task_def(){
 placementConstraints='
 {
       "type": "memberOf",
-      "expression": "attribute:Name=~Microservice1"
+      "expression": "attribute:Name=~Microservice2"
 }'
 
 	task_def=$(printf "$task_template" $JHIPSTER_REGISTRY_PASSWORD)
@@ -103,8 +103,8 @@ placementConstraints='
 
 push_ecr_image(){
 	eval $(aws ecr get-login --no-include-email --region eu-central-1)
-	docker tag microservice1:latest 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice1:latest
-	docker push 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice1:latest
+	docker tag microservice2:latest 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice2:latest
+	docker push 142221551378.dkr.ecr.eu-central-1.amazonaws.com/microservice2:latest
 }
 
 register_definition() {
