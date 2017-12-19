@@ -49,7 +49,11 @@ make_task_def(){
       "environment": [
         {
           "name": "MYSQL_ALLOW_EMPTY_PASSWORD",
-          "value": "yes"
+          "value": "no"
+        },
+        {
+            "name": "SPRING_DATASOURCE_PASSWORD",
+            "value": "%s"
         },
         {
           "name": "MYSQL_DATABASE",
@@ -64,7 +68,11 @@ make_task_def(){
       "mountPoints": [
         {
           "containerPath": "/var/lib/mysql",
-          "sourceVolume": "volume-0"
+          "sourceVolume": "volume-dataDB"
+        },
+        {
+          "containerPath": "/central-config",
+          "sourceVolume": "volume-config"
         }
       ],
       "dockerSecurityOptions": [],
@@ -79,13 +87,23 @@ make_task_def(){
     }'
 
 
-    volumes='
+    volumes='[
         {
-            "name": "volume-0",
+            "name": "volume-config",
             "host": {
                 "sourcePath": "/home/ec2-user/central-config-server"
             }
-        }'
+        },
+        {
+            "name": "volume-dataDB",
+            "host": {
+                "sourcePath": "/home/ec2-user/mysqldata"
+            }
+        }
+        ]'
+
+
+networkmode='host'
 
 
 placementConstraints='
@@ -98,15 +116,16 @@ placementConstraints='
 	echo task_def
 }
 
-push_ecr_image(){
-	eval $(aws ecr get-login --no-include-email --region eu-central-1)
-	docker tag gateway:latest 142221551378.dkr.ecr.eu-central-1.amazonaws.com/gateway:latest
-	docker push 142221551378.dkr.ecr.eu-central-1.amazonaws.com/gateway:latest
-}
+#push_ecr_image(){
+	#eval $(aws ecr get-login --no-include-email --region eu-central-1)
+	#docker tag gateway:latest 142221551378.dkr.ecr.eu-central-1.amazonaws.com/gateway:latest
+	#docker push 142221551378.dkr.ecr.eu-central-1.amazonaws.com/gateway:latest
+    
+#}
 
 register_definition() {
 
-    if revision=$(aws ecs register-task-definition --family $family --container-definitions "$task_template" --placement-constraints "$placementConstraints" --volumes "$volumes" | $JQ '.taskDefinition.taskDefinitionArn'); then
+    if revision=$(aws ecs register-task-definition --network-mode $networkmode --family $family --container-definitions "$task_template" --placement-constraints "$placementConstraints" --volumes "$volumes" | $JQ '.taskDefinition.taskDefinitionArn'); then
         echo "Revision: $revision"
     else
         echo "Failed to register task definition"
