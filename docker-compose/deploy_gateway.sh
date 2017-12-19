@@ -42,21 +42,29 @@ make_task_def(){
 
             "cpu": 0,
             "environment": [
+            	{
+                    "name": "KEY_PASS",
+                    "value": "%s"
+                },
+		{
+                    "name": "MAIL_PASS",
+                    "value": "%s"
+                },
                 {
                     "name": "EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE",
-                    "value": "http://admin:admin@jhipster-registry:8761/eureka"
+                    "value": "http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka"
                 },
                 {
                     "name": "JHIPSTER_REGISTRY_PASSWORD",
-                    "value": "admin"
+                    "value": "%s"
                 },
                 {
                     "name": "JHIPSTER_SLEEP",
-                    "value": "20"
+                    "value": "40"
                 },
                 {
                     "name": "SPRING_CLOUD_CONFIG_URI",
-                    "value": "http://admin:admin@jhipster-registry:8761/config"
+                    "value": "http://admin:admin444@jhipster-registry:8761/config"
                 },
                 {
                     "name": "SPRING_DATASOURCE_URL",
@@ -85,10 +93,25 @@ make_task_def(){
             ],
             "readonlyRootFilesystem": false,
             "privileged": true,
-            "name": "gateway-app"
+            "name": "gateway-app",
+            "mountPoints": [
+            {
+              "containerPath": "/central-config",
+              "sourceVolume": "volume-config"
+            }
+            ]
         }
 ]'
 
+volumes='
+        {
+            "name": "volume-config",
+            "host": {
+                "sourcePath": "/home/ec2-user/central-config-server"
+            }
+        }'
+
+networkmode='host'
 
 
 placementConstraints='
@@ -109,7 +132,7 @@ push_ecr_image(){
 
 register_definition() {
 
-    if revision=$(aws ecs register-task-definition --family $family --container-definitions "$task_template" --placement-constraints "$placementConstraints" | $JQ '.taskDefinition.taskDefinitionArn'); then
+    if revision=$(aws ecs register-task-definition --volumes "$volumes" --family $family --container-definitions "$task_template" --placement-constraints "$placementConstraints" | $JQ '.taskDefinition.taskDefinitionArn'); then
         echo "Revision: $revision"
     else
         echo "Failed to register task definition"
